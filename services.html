@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Services — Azra Analytics</title>
+  <meta name="description" content="Strategy and workflow design, data ingestion and engineering, machine learning, and AI application development — one connected cycle." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Azra Analytics home">
+        <img class="brand-logo" src="images/logo.png" alt="Azra Analytics" />
+        <span class="brand-tag">Strategy Driven AI and Data</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html" aria-current="page">Services</a>
+        <a href="ai-adoption-tracker.html">AI Tracker</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Page intro ===== -->
+    <section class="page-intro">
+      <div class="container">
+        <p class="eyebrow">Strategy driven data and AI</p>
+        <h1>Our Services</h1>
+        <p class="lead">We connect strategy, workflow design, data engineering, machine learning, and AI application development to improve how organizations operate and decide.</p>
+      </div>
+    </section>
+
+    <!-- ===== Services list ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="service-row">
+          <span class="service-num">01</span>
+          <div>
+            <h3>Strategy and Workflow Design</h3>
+            <p>Identifies workflows where analytics and AI create measurable value, translating opportunities into implementation roadmaps.</p>
+            <ul class="deliverables">
+              <li>Decision and workflow maps</li>
+              <li>Prioritized opportunities</li>
+              <li>Implementation guidance</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-row">
+          <span class="service-num">02</span>
+          <div>
+            <h3>Data Ingestion &amp; Engineering</h3>
+            <p>Connects fragmented data sources, establishes pipelines, and improves data quality.</p>
+            <ul class="deliverables">
+              <li>Automated pipelines</li>
+              <li>Structured data models</li>
+              <li>Validation controls</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-row">
+          <span class="service-num">03</span>
+          <div>
+            <h3>Machine Learning</h3>
+            <p>Develops analytical systems around business decisions.</p>
+            <ul class="deliverables">
+              <li>Predictive models</li>
+              <li>Decision-support systems</li>
+              <li>Explainability &amp; monitoring</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-row">
+          <span class="service-num">04</span>
+          <div>
+            <h3>AI Application Development</h3>
+            <p>Embeds insights into workflows through intelligent assistants, document-processing systems, and custom applications.</p>
+          </div>
+        </div>
+
+        <p class="section-intro" style="margin-top:36px">Services function as one connected cycle: strategy informs decisions, data engineering builds foundations, machine learning generates insights, and AI applications embed those insights into workflows.</p>
+      </div>
+    </section>
+
+    <!-- ===== Contact CTA ===== -->
+    <section class="section section-cta">
+      <div class="container contact-inner">
+        <h2 class="section-title">Turn your data into intelligent workflows and better decisions</h2>
+        <a class="btn btn-primary" href="contact.html">Discuss a workflow</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="images/logo-light.png" alt="Azra Analytics" />
+        <span class="brand-tag">Strategy Driven AI and Data</span>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="team.html">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="ai-adoption-tracker.html">AI Tracker</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:omar@azraanalytics.com">omar@azraanalytics.com</a>
+        <a href="https://www.linkedin.com/company/azra-analytics" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Azra Analytics. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.primary-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  </script>
+</body>
+</html>

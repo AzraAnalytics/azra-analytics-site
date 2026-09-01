@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discuss a Workflow — Azra Analytics</title>
+  <meta name="description" content="Tell us where work slows down, data remains fragmented, or an important decision needs better support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Azra Analytics home">
+        <img class="brand-logo" src="images/logo.png" alt="Azra Analytics" />
+        <span class="brand-tag">Strategy Driven AI and Data</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="ai-adoption-tracker.html">AI Tracker</a>
+        <a href="contact.html" class="nav-cta" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Page intro ===== -->
+    <section class="page-intro">
+      <div class="container">
+        <p class="eyebrow">Get in touch</p>
+        <h1>Let's discuss an important workflow</h1>
+        <p class="lead">Tell us where work slows down, data remains fragmented, or an important decision needs better support. We'll help you identify a practical next step using data, machine learning, or AI.</p>
+      </div>
+    </section>
+
+    <!-- ===== Contact form ===== -->
+    <section class="section">
+      <div class="container contact-layout">
+        <form class="contact-form" id="contact-form">
+          <h2 class="section-title" style="font-size:1.3rem; margin-bottom:0">Start with the workflow</h2>
+          <p style="margin:0">You do not need to begin with a particular technology or a fully defined project. Start by telling us about the workflow, decision, or operational problem you want to improve.</p>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="first-name">First name</label>
+              <input type="text" id="first-name" name="firstName" required />
+            </div>
+            <div class="field">
+              <label for="last-name">Last name</label>
+              <input type="text" id="last-name" name="lastName" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="position">Position</label>
+              <input type="text" id="position" name="position" />
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Please describe the workflow that you would like to discuss</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Start the conversation</button>
+          <p class="form-note" id="form-note">This opens your email client with your message pre-filled to omar@azraanalytics.com — we typically respond within two business days.</p>
+        </form>
+
+        <aside class="contact-meta">
+          <div class="meta-block">
+            <h3>Email</h3>
+            <p><a href="mailto:omar@azraanalytics.com">omar@azraanalytics.com</a></p>
+          </div>
+          <div class="meta-block">
+            <h3>Location</h3>
+            <p>Based in Michigan, working with organizations internationally.</p>
+          </div>
+          <div class="meta-block">
+            <h3>LinkedIn</h3>
+            <p><a href="https://www.linkedin.com/company/azra-analytics" target="_blank" rel="noopener">linkedin.com/company/azra-analytics</a></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="images/logo-light.png" alt="Azra Analytics" />
+        <span class="brand-tag">Strategy Driven AI and Data</span>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="team.html">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="ai-adoption-tracker.html">AI Tracker</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:omar@azraanalytics.com">omar@azraanalytics.com</a>
+        <a href="https://www.linkedin.com/company/azra-analytics" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Azra Analytics. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.primary-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+
+    // No backend on this static site — build a pre-filled mailto: link from the form fields.
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const f = e.target;
+      const subject = `Workflow inquiry from ${f.firstName.value} ${f.lastName.value}`.trim();
+      const bodyLines = [
+        `Name: ${f.firstName.value} ${f.lastName.value}`,
+        f.position.value ? `Position: ${f.position.value}` : null,
+        f.company.value ? `Company: ${f.company.value}` : null,
+        f.phone.value ? `Phone: ${f.phone.value}` : null,
+        `Email: ${f.email.value}`,
+        '',
+        f.message.value
+      ].filter(Boolean).join('\n');
+      window.location.href = `mailto:omar@azraanalytics.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines)}`;
+    });
+  </script>
+</body>
+</html>

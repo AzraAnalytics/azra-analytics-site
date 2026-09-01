@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Selected Projects — Azra Analytics</title>
+  <meta name="description" content="Data, analytics, machine-learning, and AI systems built around real organizational decisions and workflows." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Azra Analytics home">
+        <img class="brand-logo" src="images/logo.png" alt="Azra Analytics" />
+        <span class="brand-tag">Strategy Driven AI and Data</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="ai-adoption-tracker.html">AI Tracker</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Page intro ===== -->
+    <section class="page-intro">
+      <div class="container">
+        <p class="eyebrow">Selected work</p>
+        <h1>Selected Work</h1>
+        <p class="lead">We design data, analytics, machine-learning, and AI systems around real organizational decisions and workflows. Our work spans public-health infrastructure, financial operations, expense anomaly detection, logistics analytics, and predictive decision support.</p>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Assessment of Pakistan's Public-Health Data Infrastructure</h3>
+            <p>Azra Analytics performed a countrywide evaluation of Pakistan's public-health data systems with U.S. CDC backing. The initiative encompassed technical review of the National Health Data Center, capacity surveys across 124 districts, and fieldwork at 81 health facilities spanning 39 districts. The team examined data flows, reporting approaches, infrastructure conditions, data quality, duplication concerns, and disease-surveillance mechanisms, then offered strategic recommendations for system enhancement and integration.</p>
+          </article>
+          <article class="card">
+            <h3>Expense Anomaly Detection</h3>
+            <p>Azra Analytics developed an anomaly-detection framework for five years of expense transactions from a major leasing organization. The system combines rule-based controls with Isolation Forest, Histogram-Based Outlier Scores, and denoising autoencoder models to identify duplicate patterns, suspicious amounts, structural rarity, and unusual combinations of transaction features. The framework includes data preparation, model evaluation, multi-model anomaly comparison, explainability outputs, stakeholder reporting, and deployment planning for both batch and individual transaction reviews.</p>
+          </article>
+          <article class="card">
+            <h3>Integrated Data and Safety Platform for Transportation</h3>
+            <p>Azra Analytics designed a technical architecture for a trucking and logistics company that integrates operational data from multiple Google Sheets into a centralized data warehouse, automated ETL pipeline, REST API, and dashboard-ready analytics layer. The project also uses millions of federal inspection records to model weigh-station activity, predict inspection outcomes and depth, and identify likely violation categories — giving managers, dispatchers, and drivers more timely, consistent, and actionable information.</p>
+          </article>
+          <article class="card">
+            <h3>Data Ingestion Pipeline for PDFs and Document Images</h3>
+            <p>Azra Analytics designed and prototyped an on-premises AI platform that converts digital and scanned bank statements into validated transaction data and automated financial reports, using document classification, OCR, large language models, deterministic parsers, arithmetic validation, confidence scoring, and human exception review — reducing manual data entry, strengthening auditability, protecting sensitive financial data, and establishing a structured foundation for future risk analytics and decision support.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact CTA ===== -->
+    <section class="section section-cta">
+      <div class="container contact-inner">
+        <h2 class="section-title">Let's build something intelligent</h2>
+        <p class="lead">Tell us about your data and the decisions you want to improve. We'll show you what's possible.</p>
+        <a class="btn btn-primary" href="contact.html">Discuss a workflow</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="images/logo-light.png" alt="Azra Analytics" />
+        <span class="brand-tag">Strategy Driven AI and Data</span>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="team.html">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="ai-adoption-tracker.html">AI Tracker</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:omar@azraanalytics.com">omar@azraanalytics.com</a>
+        <a href="https://www.linkedin.com/company/azra-analytics" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Azra Analytics. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.primary-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  </script>
+</body>
+</html>

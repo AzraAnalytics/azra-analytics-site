@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meet Our Team — Azra Analytics</title>
+  <meta name="description" content="Experience across strategy, operations, data, and AI — meet the Azra Analytics team." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Azra Analytics home">
+        <img class="brand-logo" src="images/logo.png" alt="Azra Analytics" />
+        <span class="brand-tag">Strategy Driven AI and Data</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="team.html" aria-current="page">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="ai-adoption-tracker.html">AI Tracker</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Page intro ===== -->
+    <section class="page-intro">
+      <div class="container">
+        <p class="eyebrow">Who we are</p>
+        <h1>Experience across strategy, operations, data, and AI</h1>
+        <p class="lead">We combine business leadership, organizational insight, data engineering, and applied AI to build systems that improve how organizations analyze information, make decisions, and execute their strategies.</p>
+      </div>
+    </section>
+
+    <!-- ===== Team ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-3">
+          <article class="team-card">
+            <img class="avatar-photo" src="images/team/omar-malik.jpg" alt="Omar Malik" />
+            <h3>Omar Malik</h3>
+            <p class="role">Founder &amp; CEO</p>
+            <p class="expertise">Business Strategy · Decision Architecture · Data Science and AI</p>
+            <p>Omar combines expertise in business strategy, organizational decision-making, data science, and AI. He helps organizations identify high-value decisions, redesign the workflows surrounding them, and build data and AI systems that improve execution. His work spans strategic assessment, data engineering, predictive modeling, anomaly detection, and AI application development.</p>
+          </article>
+          <article class="team-card">
+            <img class="avatar-photo" src="images/team/ahmad-jamal-khan.jpg" alt="Ahmad Jamal Khan" />
+            <h3>Ahmad Jamal Khan</h3>
+            <p class="role">Operations &amp; Project Coordination Lead</p>
+            <p class="expertise">Financial Services · Operations · Risk and Compliance</p>
+            <p>Jamal brings more than three decades of leadership experience in financial services, including strategy, risk management, regulatory compliance, and operations. At Azra Analytics, he coordinates complex client engagements and translates project objectives into practical implementation plans grounded in stakeholder needs and organizational realities.</p>
+          </article>
+          <article class="team-card">
+            <img class="avatar-photo" src="images/team/shahbaz-khan.png" alt="Shahbaz Khan" />
+            <h3>Shahbaz Khan</h3>
+            <p class="role">Data Scientist &amp; AI Developer</p>
+            <p class="expertise">Data Engineering · Machine Learning · AI Applications</p>
+            <p>Shahbaz develops end-to-end data and machine-learning solutions, including data pipelines, predictive models, analytical applications, and operational tools. His research on convolutional neural networks received a Best Paper Award at an IEEE-sponsored conference, and he has built applications that generate real-time predictions from audio data.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact CTA ===== -->
+    <section class="section section-cta">
+      <div class="container contact-inner">
+        <h2 class="section-title">Let's build something intelligent</h2>
+        <p class="lead">Tell us about your data and the decisions you want to improve. We'll show you what's possible.</p>
+        <a class="btn btn-primary" href="contact.html">Discuss a workflow</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="images/logo-light.png" alt="Azra Analytics" />
+        <span class="brand-tag">Strategy Driven AI and Data</span>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="team.html">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="ai-adoption-tracker.html">AI Tracker</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:omar@azraanalytics.com">omar@azraanalytics.com</a>
+        <a href="https://www.linkedin.com/company/azra-analytics" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Azra Analytics. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.primary-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  </script>
+</body>
+</html>
