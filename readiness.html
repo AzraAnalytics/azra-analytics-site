@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI &amp; Data Readiness Assessment — Azra Analytics</title>
+  <meta name="description" content="A free 15-question assessment scoring your organization across data foundations, governance, capability, use-case pipeline, and decision culture — with the three moves that matter most next." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.azraanalytics.com/#org",
+        "name": "Azra Analytics",
+        "url": "https://www.azraanalytics.com/",
+        "email": "omar@azraanalytics.com",
+        "slogan": "Strategy Driven AI and Data",
+        "description": "Strategy-driven data and AI development firm connecting business strategy, workflow design, data engineering, machine learning, and AI application development.",
+        "areaServed": "Worldwide",
+        "address": { "@type": "PostalAddress", "addressRegion": "MI", "addressCountry": "US" },
+        "sameAs": ["https://www.linkedin.com/company/azra-analytics"],
+        "knowsAbout": ["Data strategy", "Workflow design", "Data engineering", "Machine learning", "AI readiness assessment", "AI application development", "Data governance"]
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://www.azraanalytics.com/readiness.html#app",
+        "name": "AI & Data Readiness Assessment",
+        "url": "https://www.azraanalytics.com/readiness.html",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any web browser",
+        "browserRequirements": "Requires JavaScript. Runs entirely in the browser; no account and no data submission.",
+        "description": "A 15-question self-assessment that scores an organization across five dimensions of AI and data readiness — data foundations, governance and trust, capability and ownership, use-case pipeline, and decision culture — and returns a prioritized set of next moves mapped to the relevant discipline.",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "15 diagnostic questions across five readiness dimensions",
+          "Deterministic scoring with a radar profile",
+          "Three prioritized next moves derived from the lowest-scoring dimensions",
+          "Printable report; results can be emailed to Azra Analytics"
+        ],
+        "publisher": { "@id": "https://www.azraanalytics.com/#org" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.azraanalytics.com/readiness.html",
+        "name": "AI & Data Readiness Assessment — Azra Analytics",
+        "about": { "@id": "https://www.azraanalytics.com/#org" },
+        "mainEntity": { "@id": "https://www.azraanalytics.com/readiness.html#app" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Azra Analytics home">
+        <img class="brand-logo" src="images/logo.png" alt="Azra Analytics" />
+        <span class="brand-tag">Strategy Driven AI and Data</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="readiness.html" aria-current="page">Readiness</a>
+        <a href="ai-adoption-tracker.html">AI Tracker</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Page intro ===== -->
+    <section class="page-intro">
+      <div class="container">
+        <p class="eyebrow">Free assessment</p>
+        <h1>AI &amp; Data Readiness Assessment</h1>
+        <p class="lead">Fifteen questions on how your organization actually runs today — not on which technology you should buy. You get a scored profile across five dimensions and the three moves that would do the most good next.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container assess-wrap">
+
+        <!-- ===== Start panel ===== -->
+        <div class="assess-panel" id="assess-intro">
+          <h2>Before you start</h2>
+          <p>Most AI projects do not fail on the model. They fail because the data could not be trusted, nobody owned the output, or no one had agreed in advance to act on it. This assessment looks at those conditions.</p>
+          <ul class="assess-facts">
+            <li><strong>15 questions</strong>, about five minutes.</li>
+            <li>Scored across <strong>data foundations, governance and trust, capability and ownership, use-case pipeline,</strong> and <strong>decision culture</strong>.</li>
+            <li>Answer for the part of the organization you are responsible for, and answer honestly — a flattering score is worth nothing to you.</li>
+            <li>Pick the option closest to the truth today, not the one you are working toward.</li>
+          </ul>
+          <button type="button" class="btn btn-primary" id="assess-start">Start the assessment</button>
+          <button type="button" class="btn btn-ghost" id="assess-resume" hidden>Resume where I left off</button>
+          <p class="assess-note">Your answers stay in your browser. Nothing is sent to Azra Analytics or anyone else unless you choose to email your results at the end.</p>
+        </div>
+
+        <!-- ===== Questions ===== -->
+        <div class="assess-panel" id="assess-quiz" hidden>
+          <div class="assess-progress-head">
+            <span id="assess-counter">Question 1 of 15</span>
+            <span class="assess-dim" id="assess-dimname">Data foundations</span>
+          </div>
+          <div class="assess-bar"><span id="assess-progress"></span></div>
+
+          <form id="assess-form">
+            <fieldset class="assess-question">
+              <legend id="assess-legend"></legend>
+              <div id="assess-options" aria-live="polite"></div>
+            </fieldset>
+          </form>
+
+          <div class="assess-nav">
+            <button type="button" class="assess-back" id="assess-back" disabled>&larr; Back</button>
+          </div>
+        </div>
+
+        <!-- ===== Results ===== -->
+        <div id="assess-results" hidden>
+          <div class="assess-panel">
+            <div class="assess-score-head">
+              <svg class="assess-ring" viewBox="0 0 132 132" role="img" aria-labelledby="ring-title">
+                <title id="ring-title">Overall readiness score</title>
+                <circle class="assess-ring-track" cx="66" cy="66" r="52"></circle>
+                <circle class="assess-ring-value" id="ring-value" cx="66" cy="66" r="52"
+                        stroke-dasharray="326.7" stroke-dashoffset="326.7"></circle>
+                <text class="assess-ring-num" id="ring-num" x="66" y="77" text-anchor="middle">0</text>
+              </svg>
+              <div>
+                <p class="eyebrow">Overall readiness</p>
+                <h2 class="assess-band" id="assess-bandname">—</h2>
+                <p id="assess-bandtext"></p>
+              </div>
+            </div>
+
+            <svg class="assess-radar" id="assess-radar" viewBox="0 0 400 300" role="img" aria-labelledby="radar-title">
+              <title id="radar-title">Readiness profile across five dimensions</title>
+            </svg>
+            <p class="assess-note" style="text-align:center">Each axis runs from 0 at the center to 100 at the edge.</p>
+          </div>
+
+          <h2 class="section-title" style="margin-top:40px">Where you stand</h2>
+          <ul class="assess-dims" id="assess-dimlist"></ul>
+
+          <h2 class="section-title" style="margin-top:40px">Your next three moves</h2>
+          <p class="section-intro">Ordered by where the ground is weakest. Each one is scoped to be finishable, and each maps to the discipline that carries it.</p>
+          <div id="assess-moves"></div>
+
+          <div class="assess-actions">
+            <button type="button" class="btn btn-primary" id="assess-print">Print or save as PDF</button>
+            <button type="button" class="btn btn-ghost" id="assess-copy">Copy my results</button>
+          </div>
+          <p class="assess-status" id="assess-copystatus" role="status"></p>
+
+          <div class="assess-send">
+            <h3>Send your results to Azra Analytics</h3>
+            <p>If you want a second opinion on the sequence, send us the scores. We will read them and reply with what we would do first — no obligation, and no sales sequence.</p>
+            <form id="assess-email-form">
+              <div class="form-row">
+                <div class="field">
+                  <label for="send-name">Your name</label>
+                  <input type="text" id="send-name" name="name" required />
+                </div>
+                <div class="field">
+                  <label for="send-email">Your email</label>
+                  <input type="email" id="send-email" name="email" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="send-company">Organization</label>
+                  <input type="text" id="send-company" name="company" />
+                </div>
+                <div class="field">
+                  <label for="send-context">What prompted you to take this? (optional)</label>
+                  <input type="text" id="send-context" name="context" />
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Email my results</button>
+            </form>
+            <p class="assess-note">This opens your own email client with the results pre-filled to omar@azraanalytics.com. Nothing is transmitted until you press send there, and you can edit or delete anything first.</p>
+          </div>
+
+          <p style="margin-top:28px" class="assess-restart">
+            <button type="button" class="assess-back" id="assess-restart">Start over</button>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== Contact CTA ===== -->
+    <section class="section section-cta">
+      <div class="container contact-inner">
+        <h2 class="section-title">Want to talk it through?</h2>
+        <p class="lead">The assessment tells you where the ground is soft. A conversation tells you what to build on it first.</p>
+        <a class="btn btn-primary" href="contact.html">Discuss a workflow</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="images/logo-light.png" alt="Azra Analytics" />
+        <span class="brand-tag">Strategy Driven AI and Data</span>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="team.html">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="readiness.html">Readiness</a>
+        <a href="ai-adoption-tracker.html">AI Tracker</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:omar@azraanalytics.com">omar@azraanalytics.com</a>
+        <a href="https://www.linkedin.com/company/azra-analytics" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Azra Analytics. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.primary-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  </script>
+
+  <script>
+  /* ===========================================================================
+     AI & Data Readiness Assessment — fully deterministic, runs offline.
+     15 questions, 3 per dimension, each scored 0-3. Dimension raw score 0-9.
+     Overall = sum / 45. No network calls, no backend, no data leaves the page.
+     =========================================================================== */
+  (function () {
+    'use strict';
+
+    var STORAGE_KEY = 'azra-readiness-v1';
+
+    /* ---- Dimensions -------------------------------------------------------
+       states[] and moves[] are indexed by band: 0 = raw 0-3, 1 = raw 4-6,
+       2 = raw 7-9. Order here is the radar axis order and never changes. */
+    var DIMENSIONS = [
+      {
+        id: 'data',
+        name: 'Data foundations',
+        blurb: 'Whether the data behind your important decisions exists, can be reached, and can be trusted.',
+        states: [
+          'The data you would need is scattered, manual, or partly undocumented. Anything built on it today would inherit that fragility.',
+          'The data exists and can be assembled, but assembling it is a recurring manual job that quietly caps how much you can do.',
+          'Your data is integrated, retained, and automated enough to build on without a preparation project first.'
+        ],
+        moves: [
+          {
+            title: 'Map the data behind one decision, end to end',
+            body: 'Choose the single decision you most want to improve and trace every input back to where it is created — what exists, who produces it, and exactly where it stops being reliable. This is a two-to-three week exercise, and it usually shows that the blocker is one or two sources rather than the whole estate. It also converts "our data is a mess" into a list you can actually work through.',
+            service: 'Strategy and Workflow Design'
+          },
+          {
+            title: 'Automate the report your team rebuilds most often',
+            body: 'You have the sources; the cost is the manual joining and the errors it introduces. Build one pipeline that lands that data on a schedule, with validation on the fields that matter. It returns analyst time immediately, and every model or application you build later sits on it instead of on a spreadsheet someone maintains by hand.',
+            service: 'Data Ingestion &amp; Engineering'
+          },
+          {
+            title: 'Extend the foundation to the next two use cases',
+            body: 'Your data is dependable enough to build on, so the return now comes from breadth rather than repair. Connect the adjacent sources your next candidate decisions will need, before a live project forces you to do it under deadline. Doing this ahead of time is what makes the second and third projects much faster than the first.',
+            service: 'Data Ingestion &amp; Engineering'
+          }
+        ]
+      },
+      {
+        id: 'governance',
+        name: 'Governance &amp; trust',
+        blurb: 'Whether numbers have owners, errors are caught before they reach a decision, and results can be explained afterward.',
+        states: [
+          'Definitions, quality checks, and traceability are largely informal. Disagreement about the numbers is likely to stall any system you deploy.',
+          'The essentials are in place for the most important data, with gaps that would matter under audit or scrutiny.',
+          'Ownership, validation, and traceability are strong enough to support automated decisions in a reviewed environment.'
+        ],
+        moves: [
+          {
+            title: 'Write down your five most-argued metrics and name an owner for each',
+            body: 'Unglamorous, cheap, and it removes the most common reason analytics gets ignored: two people arriving at the same meeting with different numbers for the same thing. Put the definition, the source, and the owner in one document people can reference. Until this exists, better models mostly produce better arguments.',
+            service: 'Strategy and Workflow Design'
+          },
+          {
+            title: 'Put automated checks on the fields that would hurt most if wrong',
+            body: 'Not everything — the handful whose silent failure would produce a genuinely bad decision. Add validation, alerting when it trips, and a named person responsible for fixing it. The goal is that data problems are found by a check rather than by a customer or an executive.',
+            service: 'Data Ingestion &amp; Engineering'
+          },
+          {
+            title: 'Make decisions reconstructable before you automate them',
+            body: 'Log inputs, model versions, and outputs so any figure can be traced back and reproduced months later. In finance, health, and anything regulated, this is the difference between a system that ships and one that legal or compliance stops at the last step. Build it in from the start; retrofitting an audit trail is far more expensive.',
+            service: 'AI Application Development'
+          }
+        ]
+      },
+      {
+        id: 'capability',
+        name: 'Capability &amp; ownership',
+        blurb: 'Who can build these systems, who keeps them running afterward, and whether AI tool use is deliberate.',
+        states: [
+          'There is little internal capacity to build or maintain data systems. Anything delivered now needs an explicit ownership plan or it will decay.',
+          'Capable people exist but are at capacity, and maintenance is thinner than delivery. This is usually what limits your throughput.',
+          'You have owned, monitored systems and deliberate AI tool use — the conditions for compounding rather than one-off wins.'
+        ],
+        moves: [
+          {
+            title: 'Decide what you will own and what you will buy',
+            body: 'With little internal build capacity, the expensive mistake is hiring a team before a use case has proven itself. Scope the first project so it can be delivered with outside help and handed over with documentation, and decide up front which parts you intend to run yourselves. That decision shapes the architecture, so make it before the build, not after.',
+            service: 'Strategy and Workflow Design'
+          },
+          {
+            title: 'Give one delivered system a named owner and a maintenance budget',
+            body: 'Your constraint is capacity, not skill. Unowned systems degrade quietly, and each one that rots makes the organization less willing to fund the next. Pick something already delivered, name the owner, fund the upkeep, and make that the template for everything that follows.',
+            service: 'AI Application Development'
+          },
+          {
+            title: 'Set the guardrails before AI tool use outruns them',
+            body: 'You have real capability, which means adoption will move faster than policy unless you get ahead of it. Sanction a small set of tools, write the rules about what data may go into them, train people properly, and measure whether they actually save time. Deliberate use compounds; unmanaged use creates exposure you find out about later.',
+            service: 'Strategy and Workflow Design'
+          }
+        ]
+      },
+      {
+        id: 'usecase',
+        name: 'Use-case pipeline',
+        blurb: 'Whether you have named, valued, and sequenced candidates — and whether anything has reached production.',
+        states: [
+          'Candidates are not yet defined as decisions with owners and value. This is the most common place for AI budget to be spent without return.',
+          'You have real candidates and some sense of value; sequencing and getting the first one into production are the open questions.',
+          'You have a prioritized pipeline with quantified value and a track record of systems that reached production and stayed there.'
+        ],
+        moves: [
+          {
+            title: 'Name three candidate decisions and choose one',
+            body: 'Move from "we should be using AI" to a specific recurring decision: who makes it, how often, on what information, and what a better version is worth. If you cannot name the decision-maker and the frequency, it is not yet a use case — it is a technology looking for a home. Three named candidates is enough to choose from without over-planning.',
+            service: 'Strategy and Workflow Design'
+          },
+          {
+            title: 'Put a number on your leading candidate',
+            body: 'Estimate what a better outcome is worth per occurrence and how often the occurrence happens. A rough written range beats an unwritten intuition, and it settles most sequencing arguments in a single meeting. It also gives you the baseline you will need later to prove the work returned anything.',
+            service: 'Strategy and Workflow Design'
+          },
+          {
+            title: 'Sequence by feasibility, not enthusiasm',
+            body: 'You have candidates and a sense of their value. Order them by whether usable data already exists and whether someone can act on the result, then drive the first one all the way into production where it can be measured. A pipeline of promising ideas that never ship is indistinguishable, from the outside, from having no pipeline.',
+            service: 'Machine Learning'
+          }
+        ]
+      },
+      {
+        id: 'culture',
+        name: 'Decision culture',
+        blurb: 'Whether evidence changes what people do, outputs reach a named decision-maker, and results get measured.',
+        states: [
+          'Evidence does not reliably change decisions today. A technically sound system would likely go unused, which is the most expensive failure mode there is.',
+          'Evidence changes some decisions. Getting outputs in front of the right person, in the right tool, is where the remaining value sits.',
+          'Your organization acts on evidence and assigns ownership — the condition under which analytics work actually pays back.'
+        ],
+        moves: [
+          {
+            title: 'Start where the decision-owner has agreed in advance to act',
+            body: 'The most common failure is not a bad model but a good one nobody uses. Choose a first project where a named person has said, before the work begins, that they will change what they do if the evidence points that way. That single commitment does more for the odds of success than any modeling choice.',
+            service: 'Strategy and Workflow Design'
+          },
+          {
+            title: 'Deliver the output into the tool people already use',
+            body: 'Adoption follows placement far more than it follows quality. A number that appears inside an existing workflow gets used; a separate dashboard gets visited twice and then forgotten. Decide where the output has to land before you decide how to produce it.',
+            service: 'AI Application Development'
+          },
+          {
+            title: 'Define success and capture the baseline before you build',
+            body: 'Your organization acts on evidence; the remaining gap is proving what each piece of work returned. Write down the success metric and record today’s number before anything changes. Without that baseline, a successful project and a neutral one look identical six months later, and the next round of funding becomes a matter of opinion.',
+            service: 'Machine Learning'
+          }
+        ]
+      }
+    ];
+
+    /* ---- Questions: 3 per dimension, options ordered 0 -> 3 ---- */
+    var QUESTIONS = [
+      { dim: 'data', text: 'Where does the data behind your most important recurring decision live today?', options: [
+        'Mostly in people’s heads, email threads, or paper and scanned documents',
+        'Spread across several systems and spreadsheets — assembling it is a manual job',
+        'In a few systems we can query, though joining them takes real effort',
+        'In a central, documented store that is already integrated and queryable'
+      ]},
+      { dim: 'data', text: 'If you needed three years of clean history for that decision, how quickly could you get it?', options: [
+        'We are not confident the history exists or is complete',
+        'Weeks — someone would have to reconstruct it from several places',
+        'Days — it exists but would need cleanup and checking',
+        'Hours — it is retained, consistent, and documented'
+      ]},
+      { dim: 'data', text: 'How much of the reporting people rely on is produced by hand?', options: [
+        'Nearly all of it — spreadsheets rebuilt from scratch each cycle',
+        'Most of it, with a few automated pieces',
+        'Mostly automated, with manual adjustments at the end',
+        'Automated end to end, with validation that catches breakage'
+      ]},
+
+      { dim: 'governance', text: 'Who owns the definition of your key business metrics?', options: [
+        'No one — different teams routinely report different numbers',
+        'Each team defines its own, and we reconcile them in meetings',
+        'One team owns most definitions, informally',
+        'Named owners and written definitions that people actually reference'
+      ]},
+      { dim: 'governance', text: 'What quality checks run on data before it reaches a decision?', options: [
+        'None — problems are discovered afterward, usually by whoever was misled',
+        'Occasional manual spot-checks when something looks wrong',
+        'Automated checks on the most critical fields',
+        'Automated validation with alerting and a defined path to a fix'
+      ]},
+      { dim: 'governance', text: 'If an auditor, regulator, or client asked how a reported number was produced, could you show them?', options: [
+        'No — we would have to reconstruct it and hope it matched',
+        'Partly, with significant effort and some gaps',
+        'Yes for most systems, with a few we would rather not be asked about',
+        'Yes — inputs, versions, and decisions are logged and reviewable'
+      ]},
+
+      { dim: 'capability', text: 'Who inside the organization can build and maintain a data pipeline?', options: [
+        'No one — we would need outside help for all of it',
+        'One person, informally, alongside their real job',
+        'A small team, but they are already at capacity',
+        'A dedicated team with capacity to take on new work'
+      ]},
+      { dim: 'capability', text: 'When an analysis, dashboard, or model is delivered, who keeps it running?', options: [
+        'Nobody is assigned — things quietly break and stop being used',
+        'Whoever built it, if they are still here and have time',
+        'A team owns it, though monitoring is thin',
+        'Clear ownership, with monitoring and a maintenance budget'
+      ]},
+      { dim: 'capability', text: 'How does your organization use AI tools today?', options: [
+        'Not at all, or informally and without sanction',
+        'Individuals experiment on their own initiative',
+        'A few approved tools with some guidance on how to use them',
+        'Deliberate use, with policy, training, and measured outcomes'
+      ]},
+
+      { dim: 'usecase', text: 'How well defined are your candidate AI or data use cases?', options: [
+        'We know we should do something but have not named a use case',
+        'A list of ideas, mostly technology-led ("we should use AI for X")',
+        'Several candidates tied to specific workflows',
+        'A prioritized set, each tied to a decision and an owner'
+      ]},
+      { dim: 'usecase', text: 'For your leading candidate, do you know what a better outcome is worth?', options: [
+        'No — we have not tried to estimate the value',
+        'A rough intuition, not written down anywhere',
+        'An estimated range that we broadly agree on',
+        'A quantified case with a baseline we can measure against'
+      ]},
+      { dim: 'usecase', text: 'Has any data or AI project reached production and stayed there?', options: [
+        'No — nothing has gone beyond discussion or a slide deck',
+        'We have run pilots, but none are still in use',
+        'One or two are live and being used',
+        'Several are live, used routinely, and measured'
+      ]},
+
+      { dim: 'culture', text: 'When evidence contradicts an experienced leader’s instinct, what usually happens?', options: [
+        'Instinct wins, and the analysis is not revisited',
+        'It gets debated, but the status quo is the default outcome',
+        'It genuinely changes some decisions',
+        'We expect to be challenged by evidence and we act on it'
+      ]},
+      { dim: 'culture', text: 'Is it clear who would act on the output of a new model or dashboard?', options: [
+        'No — it would go to a general audience with no specific owner',
+        'We would work that out after it was built',
+        'Yes, for the main use case',
+        'Yes — named decision-makers, receiving it in the tool they already use'
+      ]},
+      { dim: 'culture', text: 'How do you decide whether a change actually worked?', options: [
+        'We do not really measure after the fact',
+        'Anecdotes and general impressions',
+        'We track relevant metrics before and after',
+        'We define success up front and measure against a recorded baseline'
+      ]}
+    ];
+
+    var BANDS = [
+      { min: 0,  max: 34,  name: 'Exploring',
+        text: 'The foundations are not yet in place for AI to return much. That is a normal starting point and a useful thing to know before spending: the highest-return work right now is unglamorous — defining decisions, making data reachable, and agreeing what the numbers mean. Skipping to a model from here almost always produces a pilot that impresses once and is never used again.' },
+      { min: 35, max: 54, name: 'Building',
+        text: 'You have real material to work with and real gaps. The risk at this stage is breadth: starting several things, finishing none, and concluding that AI does not work here. Pick one decision with data that already exists and an owner who wants it improved, take it all the way to production, and use it to fund and justify the next.' },
+      { min: 55, max: 74, name: 'Operating',
+        text: 'The conditions for success are largely present, and your constraint is sequencing and follow-through rather than capability. The organizations that pull ahead from this point are the ones that make ownership and measurement routine rather than exceptional, so each delivered system makes the next one cheaper instead of adding to the maintenance burden.' },
+      { min: 75, max: 100, name: 'Compounding',
+        text: 'You have the foundations, the ownership, and the culture to make data and AI work compound rather than accumulate. The remaining leverage is in ambition and reach: harder use cases, deeper integration into workflows, and being rigorous about measuring returns so investment follows evidence. At this level the binding constraint is usually attention, not readiness.' }
+    ];
+
+    /* ---- State ---- */
+    var answers = new Array(QUESTIONS.length).fill(null);
+    var index = 0;
+    var lastResult = null;
+
+    var el = {
+      intro:      document.getElementById('assess-intro'),
+      quiz:       document.getElementById('assess-quiz'),
+      results:    document.getElementById('assess-results'),
+      start:      document.getElementById('assess-start'),
+      resume:     document.getElementById('assess-resume'),
+      counter:    document.getElementById('assess-counter'),
+      dimname:    document.getElementById('assess-dimname'),
+      progress:   document.getElementById('assess-progress'),
+      legend:     document.getElementById('assess-legend'),
+      options:    document.getElementById('assess-options'),
+      back:       document.getElementById('assess-back'),
+      radar:      document.getElementById('assess-radar'),
+      ringValue:  document.getElementById('ring-value'),
+      ringNum:    document.getElementById('ring-num'),
+      bandName:   document.getElementById('assess-bandname'),
+      bandText:   document.getElementById('assess-bandtext'),
+      dimList:    document.getElementById('assess-dimlist'),
+      moves:      document.getElementById('assess-moves'),
+      copyStatus: document.getElementById('assess-copystatus')
+    };
+
+    /* ---- Persistence (best effort — private mode can throw) ---- */
+    function save() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ answers: answers, index: index }));
+      } catch (e) { /* storage unavailable; the assessment still works */ }
+    }
+    function load() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return null;
+        var data = JSON.parse(raw);
+        if (!data || !Array.isArray(data.answers) || data.answers.length !== QUESTIONS.length) return null;
+        return data;
+      } catch (e) { return null; }
+    }
+    function clearSaved() {
+      try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    }
+
+    /* ---- Plain text from the few labels that carry an HTML entity ---- */
+    function plain(html) {
+      var d = document.createElement('div');
+      d.innerHTML = html;
+      return d.textContent;
+    }
+
+    /* ---- Question rendering ---- */
+    function dimensionById(id) {
+      for (var i = 0; i < DIMENSIONS.length; i++) {
+        if (DIMENSIONS[i].id === id) return DIMENSIONS[i];
+      }
+      return null;
+    }
+
+    function render() {
+      var q = QUESTIONS[index];
+      var dim = dimensionById(q.dim);
+
+      el.counter.textContent = 'Question ' + (index + 1) + ' of ' + QUESTIONS.length;
+      el.dimname.innerHTML = dim.name;
+      el.progress.style.width = ((index + 1) / QUESTIONS.length * 100) + '%';
+      el.legend.textContent = q.text;
+      el.back.disabled = index === 0;
+
+      el.options.innerHTML = '';
+      q.options.forEach(function (text, value) {
+        var label = document.createElement('label');
+        label.className = 'assess-option' + (answers[index] === value ? ' is-selected' : '');
+
+        var input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'q' + index;
+        input.value = String(value);
+        input.checked = answers[index] === value;
+
+        var span = document.createElement('span');
+        span.textContent = text;
+
+        label.appendChild(input);
+        label.appendChild(span);
+        el.options.appendChild(label);
+
+        input.addEventListener('change', function () { choose(value); });
+      });
+
+      // Focus the selected option, or the first one, so keyboard users land in the group.
+      var focusTarget = el.options.querySelector('input:checked') || el.options.querySelector('input');
+      if (focusTarget) focusTarget.focus({ preventScroll: true });
+    }
+
+    function choose(value) {
+      answers[index] = value;
+      save();
+      Array.prototype.forEach.call(el.options.querySelectorAll('.assess-option'), function (l, i) {
+        l.classList.toggle('is-selected', i === value);
+      });
+      // Brief pause so the selection is visible before moving on.
+      window.setTimeout(function () {
+        if (index < QUESTIONS.length - 1) {
+          index += 1;
+          save();
+          render();
+        } else {
+          finish();
+        }
+      }, 260);
+    }
+
+    el.back.addEventListener('click', function () {
+      if (index > 0) { index -= 1; save(); render(); }
+    });
+
+    /* ---- Scoring ---- */
+    function bandIndex(raw) { return raw <= 3 ? 0 : (raw <= 6 ? 1 : 2); }
+
+    function computeScores() {
+      var byDim = DIMENSIONS.map(function (d) { return { dim: d, raw: 0 }; });
+      QUESTIONS.forEach(function (q, i) {
+        var slot = byDim.filter(function (b) { return b.dim.id === q.dim; })[0];
+        slot.raw += answers[i] || 0;
+      });
+
+      var total = byDim.reduce(function (sum, b) { return sum + b.raw; }, 0);
+      var overall = Math.round(total / (QUESTIONS.length * 3) * 100);
+
+      var dims = byDim.map(function (b, i) {
+        return {
+          order: i,
+          dim: b.dim,
+          raw: b.raw,
+          percent: Math.round(b.raw / 9 * 100),
+          band: bandIndex(b.raw)
+        };
+      });
+
+      var band = BANDS.filter(function (x) { return overall >= x.min && overall <= x.max; })[0];
+
+      // Three moves: the weakest dimensions first; ties break on the fixed dimension order.
+      var weakest = dims.slice().sort(function (a, b) {
+        return a.percent - b.percent || a.order - b.order;
+      }).slice(0, 3);
+
+      return { overall: overall, band: band, dims: dims, moves: weakest };
+    }
+
+    /* ---- Radar chart ---- */
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    function svgEl(tag, attrs) {
+      var node = document.createElementNS(SVGNS, tag);
+      Object.keys(attrs || {}).forEach(function (k) { node.setAttribute(k, attrs[k]); });
+      return node;
+    }
+
+    function drawRadar(dims) {
+      var cx = 200, cy = 145, r = 95;
+      var n = dims.length;
+      // Keep the accessible <title>, drop any previous drawing.
+      Array.prototype.slice.call(el.radar.childNodes).forEach(function (node) {
+        if (node.nodeName !== 'title') el.radar.removeChild(node);
+      });
+
+      function point(i, frac) {
+        var angle = (-Math.PI / 2) + (i * 2 * Math.PI / n);
+        return [cx + Math.cos(angle) * r * frac, cy + Math.sin(angle) * r * frac];
+      }
+      function polygon(frac) {
+        var pts = [];
+        for (var i = 0; i < n; i++) pts.push(point(i, frac).join(','));
+        return pts.join(' ');
+      }
+
+      [0.25, 0.5, 0.75, 1].forEach(function (f) {
+        el.radar.appendChild(svgEl('polygon', { points: polygon(f), 'class': 'radar-grid' }));
+      });
+
+      for (var i = 0; i < n; i++) {
+        var p = point(i, 1);
+        el.radar.appendChild(svgEl('line', { x1: cx, y1: cy, x2: p[0], y2: p[1], 'class': 'radar-axis' }));
+      }
+
+      var dataPts = dims.map(function (d, i) {
+        // Floor at 4% so a zero score still shows a shape rather than collapsing to a point.
+        return point(i, Math.max(d.percent / 100, 0.04));
+      });
+      el.radar.appendChild(svgEl('polygon', {
+        points: dataPts.map(function (p) { return p.join(','); }).join(' '),
+        'class': 'radar-area'
+      }));
+      dataPts.forEach(function (p) {
+        el.radar.appendChild(svgEl('circle', { cx: p[0], cy: p[1], r: 3.5, 'class': 'radar-dot' }));
+      });
+
+      dims.forEach(function (d, i) {
+        var lp = point(i, 1.24);
+        var anchor = 'middle';
+        if (lp[0] > cx + 6) anchor = 'start';
+        else if (lp[0] < cx - 6) anchor = 'end';
+
+        var text = svgEl('text', { x: lp[0], y: lp[1], 'text-anchor': anchor, 'class': 'radar-label' });
+        var words = plain(d.dim.name).split(' ');
+        // Two lines at most: first word, then the rest.
+        var lines = words.length > 1 ? [words[0], words.slice(1).join(' ')] : words;
+        lines.forEach(function (line, li) {
+          var t = svgEl('tspan', { x: lp[0], dy: li === 0 ? '0' : '1.15em' });
+          t.textContent = line;
+          text.appendChild(t);
+        });
+        var score = svgEl('tspan', { x: lp[0], dy: '1.15em', 'class': 'radar-score' });
+        score.textContent = d.percent;
+        text.appendChild(score);
+        el.radar.appendChild(text);
+      });
+    }
+
+    /* ---- Results ---- */
+    function finish() {
+      var result = computeScores();
+      lastResult = result;
+
+      el.progress.style.width = '100%';
+      el.quiz.hidden = true;
+      el.intro.hidden = true;
+      el.results.hidden = false;
+
+      // Score ring
+      var circumference = 2 * Math.PI * 52;
+      el.ringValue.setAttribute('stroke-dasharray', circumference.toFixed(1));
+      el.ringValue.setAttribute('stroke-dashoffset',
+        (circumference * (1 - result.overall / 100)).toFixed(1));
+      el.ringNum.textContent = result.overall;
+      el.bandName.textContent = result.band.name + ' — ' + result.overall + '/100';
+      el.bandText.textContent = result.band.text;
+
+      drawRadar(result.dims);
+
+      // Dimension breakdown
+      el.dimList.innerHTML = '';
+      result.dims.forEach(function (d) {
+        var li = document.createElement('li');
+        li.className = 'assess-dim-row';
+        li.innerHTML =
+          '<div class="assess-dim-head"><h3>' + d.dim.name + '</h3><b>' + d.percent + '/100</b></div>' +
+          '<div class="assess-dim-track"><span style="width:' + d.percent + '%"></span></div>' +
+          '<p>' + d.dim.states[d.band] + '</p>';
+        el.dimList.appendChild(li);
+      });
+
+      // Next three moves
+      el.moves.innerHTML = '';
+      result.moves.forEach(function (d, i) {
+        var move = d.dim.moves[d.band];
+        var div = document.createElement('div');
+        div.className = 'assess-move';
+        div.innerHTML =
+          '<p class="assess-service">' + (i + 1) + '. ' + d.dim.name + ' &middot; ' + move.service + '</p>' +
+          '<h3>' + move.title + '</h3>' +
+          '<p>' + move.body + '</p>';
+        el.moves.appendChild(div);
+      });
+
+      el.results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    /* ---- Report text ---- */
+    function buildReport(compact) {
+      var r = lastResult;
+      var lines = [];
+      lines.push('AI & DATA READINESS ASSESSMENT — AZRA ANALYTICS');
+      lines.push('azraanalytics.com/readiness.html');
+      lines.push('');
+      lines.push('OVERALL: ' + r.overall + '/100 — ' + r.band.name);
+      if (!compact) { lines.push(''); lines.push(r.band.text); }
+      lines.push('');
+      lines.push('BY DIMENSION');
+      r.dims.forEach(function (d) {
+        lines.push('  ' + plain(d.dim.name) + ': ' + d.percent + '/100');
+        if (!compact) lines.push('    ' + d.dim.states[d.band]);
+      });
+      lines.push('');
+      lines.push('NEXT THREE MOVES');
+      r.moves.forEach(function (d, i) {
+        var move = d.dim.moves[d.band];
+        lines.push('  ' + (i + 1) + '. ' + move.title);
+        lines.push('     (' + plain(d.dim.name) + ' — ' + plain(move.service) + ')');
+        if (!compact) { lines.push('     ' + plain(move.body)); }
+      });
+      if (!compact) {
+        lines.push('');
+        lines.push('ANSWERS');
+        QUESTIONS.forEach(function (q, i) {
+          lines.push('  ' + (i + 1) + '. ' + q.text);
+          lines.push('     ' + q.options[answers[i]] + '  [' + answers[i] + '/3]');
+        });
+      }
+      return lines.join('\n');
+    }
+
+    /* ---- Actions ---- */
+    document.getElementById('assess-print').addEventListener('click', function () {
+      window.print();
+    });
+
+    document.getElementById('assess-copy').addEventListener('click', function () {
+      var text = buildReport(false);
+      function done(ok) {
+        el.copyStatus.textContent = ok
+          ? 'Full results copied to your clipboard.'
+          : 'Could not copy automatically — select the results above and copy manually.';
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, function () { fallback(text, done); });
+      } else {
+        fallback(text, done);
+      }
+    });
+
+    function fallback(text, done) {
+      // execCommand is deprecated but is the only option on file:// and older browsers.
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      done(ok);
+    }
+
+    document.getElementById('assess-email-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Read by id: form.name would return the form's own name attribute, not the input.
+      var v = function (id) { return document.getElementById(id).value.trim(); };
+      var company = v('send-company');
+      var context = v('send-context');
+
+      // Compact report only: long mailto: URLs get truncated by some mail clients.
+      var body = [
+        'Name: ' + v('send-name'),
+        'Email: ' + v('send-email'),
+        company ? 'Organization: ' + company : null,
+        context ? 'Context: ' + context : null,
+        '',
+        buildReport(true)
+      ].filter(Boolean).join('\n');
+
+      var subject = 'Readiness assessment: ' + lastResult.overall + '/100 (' + lastResult.band.name + ')'
+        + (company ? ' — ' + company : '');
+
+      window.location.href = 'mailto:omar@azraanalytics.com?subject='
+        + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+
+    document.getElementById('assess-restart').addEventListener('click', function () {
+      answers = new Array(QUESTIONS.length).fill(null);
+      index = 0;
+      lastResult = null;
+      clearSaved();
+      el.results.hidden = true;
+      el.intro.hidden = false;
+      el.resume.hidden = true;
+      el.copyStatus.textContent = '';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ---- Entry points ---- */
+    el.start.addEventListener('click', function () {
+      answers = new Array(QUESTIONS.length).fill(null);
+      index = 0;
+      clearSaved();
+      el.intro.hidden = true;
+      el.quiz.hidden = false;
+      render();
+    });
+
+    el.resume.addEventListener('click', function () {
+      el.intro.hidden = true;
+      el.quiz.hidden = false;
+      render();
+    });
+
+    var saved = load();
+    if (saved && saved.answers.some(function (a) { return a !== null; })) {
+      answers = saved.answers;
+      index = Math.min(Math.max(saved.index | 0, 0), QUESTIONS.length - 1);
+      el.resume.hidden = false;
+      el.start.textContent = 'Start again from the beginning';
+    }
+  })();
+  </script>
+</body>
+</html>
