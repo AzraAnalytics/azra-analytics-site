@@ -57,15 +57,19 @@ Phases 0 and 1 are valid either way. Phase 2 needs the function.
 
 ---
 
-## Phase 1 — Give-away tools (deterministic JS, no backend) — NOT STARTED
+## Phase 1 — Give-away tools (deterministic JS, no backend) — IN PROGRESS
 
 Each maps to a real service line and ends with "copy / send my results to Azra" (reuse the
 `mailto:` pattern from `contact.html`).
 
-- [ ] **AI / Data Readiness Assessment** (flagship lead magnet) — 12–15 questions producing a
-      scored radar across data foundations, governance, talent, use-case pipeline, and
-      decision culture. Deterministic scoring in JS; an LLM (if present later) writes the
-      narrative and the "next 3 moves". This *is* what "Strategy and Workflow Design" sells.
+- [x] **AI / Data Readiness Assessment** (flagship lead magnet) — DONE 2026-09-06,
+      `readiness.html`. 15 questions producing a scored radar across data foundations,
+      governance & trust, capability & ownership, use-case pipeline, and decision culture.
+      Scoring, the per-dimension narrative, and the "next 3 moves" are all deterministic and
+      hand-written — the moves are keyed to each dimension's own band, so no LLM is required.
+      When Phase 2 lands, the assistant can read the same scores and interpret them in
+      context rather than replace this logic. This *is* what "Strategy and Workflow Design"
+      sells.
 - [ ] **Use-case prioritization matrix** — visitor lists candidate use cases; the tool plots
       impact × feasibility and proposes a sequence. (Strategy + Machine Learning.)
 - [ ] **"Is this a good AI use case?" checker** — paste a workflow, get an automate /
@@ -126,10 +130,14 @@ backend is chosen. Add a consent checkbox + a short privacy note wherever a tool
 ## Recommended sequence
 
 1. Phase 0 — done.
-2. Readiness Assessment as pure JS — strongest lead magnet, still no backend.
-3. Decide on the serverless function; if yes, add it + the Azra Advisor and wire the
+2. Readiness Assessment as pure JS — done (`readiness.html`).
+3. **Next open question: lead capture.** The assessment ends in a `mailto:`, so a visitor
+   without a configured mail client silently drops off at the moment they were most engaged.
+   Formspree or Netlify Forms fixes this and is a much smaller decision than the API proxy —
+   worth settling before driving traffic to the tool.
+4. Decide on the serverless function; if yes, add it + the Azra Advisor and wire the
    assessment into it.
-4. Phase 3 MCP if there's appetite.
+5. Phase 3 MCP if there's appetite.
 
 ---
 

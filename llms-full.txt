@@ -152,6 +152,43 @@ by Azra Analytics as a public data application — free to explore, no account r
 Interactive app: https://ai-adoption-tracker.onrender.com/
 
 ===============================================================================
+AI & DATA READINESS ASSESSMENT  (/readiness.html)
+===============================================================================
+
+A free, self-service assessment that scores an organization's readiness to get value from
+data and AI. Fifteen questions, about five minutes, answered about how the organization runs
+today. Scoring is deterministic and runs entirely in the visitor's browser: no account, no
+backend, and no data is transmitted unless the visitor chooses to email their results.
+
+Premise: most AI projects fail not on the model but on the conditions around it — data that
+could not be trusted, no owner for the output, or no prior agreement that anyone would act on
+it. The assessment measures those conditions.
+
+Five scored dimensions (0-100 each, three questions per dimension):
+- Data foundations — whether the data behind important decisions exists, can be reached, and
+  can be trusted.
+- Governance & trust — whether numbers have owners, errors are caught before they reach a
+  decision, and results can be explained afterward.
+- Capability & ownership — who can build these systems, who keeps them running, and whether
+  AI tool use is deliberate.
+- Use-case pipeline — whether candidates are named, valued, and sequenced, and whether
+  anything has reached production.
+- Decision culture — whether evidence changes what people do, outputs reach a named
+  decision-maker, and results get measured.
+
+Overall bands: Exploring (0-34) — foundations not yet in place; the highest-return work is
+defining decisions, making data reachable, and agreeing what the numbers mean. Building
+(35-54) — real material and real gaps; the risk is starting several things and finishing
+none. Operating (55-74) — conditions largely present; the constraint is sequencing and
+follow-through. Compounding (75-100) — foundations, ownership, and culture in place; the
+remaining leverage is ambition, reach, and measuring returns.
+
+Output: an overall score and band, a radar profile across the five dimensions, a written
+read on each dimension, and three prioritized next moves drawn from the lowest-scoring
+dimensions. Each move is mapped to the Azra Analytics service line that carries it. Results
+can be printed or saved as a PDF, copied as text, or emailed to omar@azraanalytics.com.
+
+===============================================================================
 CONTACT  (/contact.html)
 ===============================================================================
 

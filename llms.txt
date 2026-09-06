@@ -41,6 +41,11 @@ Key facts:
 
 ## Tools and resources
 
+- [AI & Data Readiness Assessment](https://www.azraanalytics.com/readiness.html) — free 15-question
+  self-assessment scoring an organization 0–100 across five dimensions (data foundations,
+  governance and trust, capability and ownership, use-case pipeline, decision culture) and
+  returning three prioritized next moves. Runs entirely in the browser; no account, no data
+  submission. Bands: Exploring (0–34), Building (35–54), Operating (55–74), Compounding (75–100).
 - [U.S. Business AI Adoption Tracker](https://ai-adoption-tracker.onrender.com/) — free public data app on how U.S. businesses adopt AI across states, industries, and firm sizes.
 - [AI Adoption Tracker landing page](https://www.azraanalytics.com/ai-adoption-tracker.html)
 - [FAQ](https://www.azraanalytics.com/faq.html) — how engagements are scoped, what assessments cover, when to use ML vs. rules, automate vs. augment.

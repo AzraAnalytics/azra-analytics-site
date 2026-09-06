@@ -36,6 +36,20 @@ Tagline: "Strategy Driven AI and Data" / "Turn your data into intelligent workfl
 - `faq.html` — 8 retrieval-oriented Q&A on how engagements are scoped, ML vs. rules, automate vs.
   augment, auditability, etc. Doubles as grounding for a future on-site assistant. Styled with
   `.faq-item` in `styles.css`.
+- `readiness.html` — the AI/Data Readiness Assessment (Phase 1 flagship lead magnet). 15 questions,
+  3 per dimension, each scored 0–3; five dimensions (data foundations, governance & trust,
+  capability & ownership, use-case pipeline, decision culture) → 0–100 each, overall = sum/45.
+  Bands: Exploring 0–34, Building 35–54, Operating 55–74, Compounding 75–100. Results = score ring,
+  hand-drawn SVG radar, per-dimension read, and **three next moves** taken from the three
+  lowest-scoring dimensions (each dimension has one move per band, so the output is fully
+  deterministic; ties break on the fixed dimension order). All content — questions, band text,
+  dimension states, moves — lives in the `DIMENSIONS` / `QUESTIONS` / `BANDS` arrays in the page's
+  own `<script>`. **No backend and no network calls**: scoring is pure JS, progress is kept in
+  `localStorage` (`azra-readiness-v1`, wrapped in try/catch), and results leave the browser only if
+  the visitor uses "Email my results", which is the same `mailto:` pattern as `contact.html`. That
+  email deliberately sends the *compact* report — long `mailto:` URLs get truncated by some clients
+  — while "Copy my results" copies the full one including every answer. Styled with `.assess-*` in
+  `styles.css`, plus an `@media print` block so "Print or save as PDF" yields a clean report.
 - Agent-discoverability layer (Phase 0 of the "agent-native" roadmap — see `agent_native.md`):
   - `llms.txt` / `llms-full.txt` — curated + full site text for LLM answer engines.
   - `services.json` / `projects.json` — machine-readable catalog of service lines and case studies.
@@ -45,10 +59,14 @@ Tagline: "Strategy Driven AI and Data" / "Turn your data into intelligent workfl
     (`ProfessionalService` + page-specific type). Update it if page content changes materially.
 - Every page repeats the same header/nav/footer markup (no templating, since `fetch()`-based
   includes break when the site is opened via `file://` with no server — see Preview below).
-  If you edit the nav or footer, **update all 7 HTML files** (the 6 originals + `faq.html`).
-  Nav order: Home · Team · Projects · Services · AI Tracker · FAQ · Contact.
+  If you edit the nav or footer, **update all 8 HTML files** (the 6 originals + `faq.html`
+  + `readiness.html`).
+  Nav order: Home · Team · Projects · Services · Readiness · AI Tracker · FAQ · Contact.
 - `styles.css` — mobile-first CSS with breakpoints at 640px (tablet) and 900px (desktop).
   Design tokens (brand colors) are CSS variables at the top of the file.
+  Exception: the **nav** switches from hamburger to horizontal bar at **1000px**, not 900px —
+  with eight items the row overflows a 900px viewport. Don't add a ninth nav item without
+  re-checking that width.
 - Fonts: Google Fonts — Space Grotesk (page headings h1/h2/h3), Inter (body). The **logo wordmark**
   is a separate choice: it's baked into the raster image using **Poppins Regular**, identified by
   comparing several candidate typefaces against the original brand-source artwork letterform by
@@ -83,8 +101,11 @@ Full plan: `agent_native.md` (in this repo). Turning the brochure into a site th
 people in Azra's domains and to AI agents (on-site assistant + external answer engines).
 - [x] Phase 0 — agent-discoverability: `llms.txt`, JSON-LD on every page, `services.json` /
       `projects.json`, `faq.html`, `robots.txt` / `sitemap.xml`. Pure static, no backend.
-- [ ] Phase 1 — deterministic give-away tools (JS only): AI/Data Readiness Assessment (flagship),
-      use-case prioritization matrix, "is this a good AI use case?" checker.
+- [ ] Phase 1 — deterministic give-away tools (JS only):
+      - [x] AI/Data Readiness Assessment (flagship) — `readiness.html`, done 2026-09-06.
+      - [ ] Use-case prioritization matrix (impact × feasibility).
+      - [ ] "Is this a good AI use case?" checker — better with the Phase 2 LLM backend.
+      - [ ] Bring the AI Adoption Tracker in-house (`/adoption.json`) instead of linking out.
 - [ ] Phase 2 — "Azra Advisor" assistant: needs ONE serverless function (Cloudflare Pages /
       Netlify) as an Anthropic API-key proxy + Turnstile + rate limit; grounded on a hand-written
       `content/knowledge.md`. This is the one open infra decision.
