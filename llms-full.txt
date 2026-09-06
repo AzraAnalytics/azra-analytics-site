@@ -1,0 +1,165 @@
+# Azra Analytics — full site text
+
+> Strategy-driven data and AI development firm. We connect business strategy, workflow
+> design, data engineering, machine learning, and AI application development to improve how
+> organizations operate and make decisions. Based in Michigan, USA; working internationally.
+> Contact: omar@azraanalytics.com | https://www.linkedin.com/company/azra-analytics
+
+This file concatenates the meaningful text of every page for retrieval. Canonical HTML
+pages live at https://www.azraanalytics.com/.
+
+===============================================================================
+HOME  (/index.html)
+===============================================================================
+
+Turn your data into intelligent workflows and better decisions.
+
+Azra Analytics designs and develops end-to-end data, machine learning, and AI systems. We
+combine business strategy, workflow architecture, data engineering, predictive modeling, and
+AI application development to build solutions that create measurable organizational value.
+
+Strategy-driven. Open-source-first. Built for your operating environment.
+
+Why it matters: AI is becoming ubiquitous. Competitive advantage is not. Sustainable value
+comes from integrating data, analytics, machine learning, AI, human expertise, and
+organizational knowledge into the workflows that determine how the organization operates and
+makes decisions. Azra Analytics is a strategy-driven data and AI development firm combining
+expertise in business strategy, operations, data engineering, machine learning, and AI
+development.
+
+Our Services (from business problem to production-ready data and AI system): Azra Analytics
+assists organizations in identifying valuable AI opportunities, establishing data
+foundations, and creating intelligent systems that enhance workflows and decisions. Services
+can address focused projects or comprehensive transformations.
+
+- Strategy and Workflow Design — identify the workflows, decisions, and operational
+  challenges where data, machine learning, and AI can create measurable value; translate
+  those opportunities into a practical implementation roadmap.
+- Machine Learning and Decision Systems — predictive and analytical models that support
+  important business decisions, from forecasting and anomaly detection to risk assessment,
+  optimization, and operational planning.
+- Data Ingestion and Engineering — connect fragmented data sources and build reliable
+  pipelines, data models, and analytical foundations; trusted, accessible data for
+  reporting, machine learning, and AI applications.
+- AI Application Development — practical AI applications that integrate models,
+  organizational knowledge, and human judgment into everyday workflows: intelligent
+  assistants, recommendation systems, document-processing tools, and custom decision-support
+  applications.
+
+===============================================================================
+SERVICES  (/services.html)
+===============================================================================
+
+Our Services. We connect strategy, workflow design, data engineering, machine learning, and
+AI application development to improve how organizations operate and decide.
+
+01 — Strategy and Workflow Design. Identifies workflows where analytics and AI create
+measurable value, translating opportunities into implementation roadmaps.
+Deliverables: Decision and workflow maps; Prioritized opportunities; Implementation guidance.
+
+02 — Data Ingestion & Engineering. Connects fragmented data sources, establishes pipelines,
+and improves data quality.
+Deliverables: Automated pipelines; Structured data models; Validation controls.
+
+03 — Machine Learning. Develops analytical systems around business decisions.
+Deliverables: Predictive models; Decision-support systems; Explainability & monitoring.
+
+04 — AI Application Development. Embeds insights into workflows through intelligent
+assistants, document-processing systems, and custom applications.
+
+Services function as one connected cycle: strategy informs decisions, data engineering
+builds foundations, machine learning generates insights, and AI applications embed those
+insights into workflows.
+
+===============================================================================
+SELECTED WORK  (/projects.html)
+===============================================================================
+
+We design data, analytics, machine-learning, and AI systems around real organizational
+decisions and workflows. Our work spans public-health infrastructure, financial operations,
+expense anomaly detection, logistics analytics, and predictive decision support.
+
+Assessment of Pakistan's Public-Health Data Infrastructure. Azra Analytics performed a
+countrywide evaluation of Pakistan's public-health data systems with U.S. CDC backing. The
+initiative encompassed technical review of the National Health Data Center, capacity surveys
+across 124 districts, and fieldwork at 81 health facilities spanning 39 districts. The team
+examined data flows, reporting approaches, infrastructure conditions, data quality,
+duplication concerns, and disease-surveillance mechanisms, then offered strategic
+recommendations for system enhancement and integration.
+
+Expense Anomaly Detection. Azra Analytics developed an anomaly-detection framework for five
+years of expense transactions from a major leasing organization. The system combines
+rule-based controls with Isolation Forest, Histogram-Based Outlier Scores, and denoising
+autoencoder models to identify duplicate patterns, suspicious amounts, structural rarity,
+and unusual combinations of transaction features. The framework includes data preparation,
+model evaluation, multi-model anomaly comparison, explainability outputs, stakeholder
+reporting, and deployment planning for both batch and individual transaction reviews.
+
+Integrated Data and Safety Platform for Transportation. Azra Analytics designed a technical
+architecture for a trucking and logistics company that integrates operational data from
+multiple Google Sheets into a centralized data warehouse, automated ETL pipeline, REST API,
+and dashboard-ready analytics layer. The project also uses millions of federal inspection
+records to model weigh-station activity, predict inspection outcomes and depth, and identify
+likely violation categories — giving managers, dispatchers, and drivers more timely,
+consistent, and actionable information.
+
+Data Ingestion Pipeline for PDFs and Document Images. Azra Analytics designed and prototyped
+an on-premises AI platform that converts digital and scanned bank statements into validated
+transaction data and automated financial reports, using document classification, OCR, large
+language models, deterministic parsers, arithmetic validation, confidence scoring, and human
+exception review — reducing manual data entry, strengthening auditability, protecting
+sensitive financial data, and establishing a structured foundation for future risk analytics
+and decision support.
+
+===============================================================================
+TEAM  (/team.html)
+===============================================================================
+
+Experience across strategy, operations, data, and AI. We combine business leadership,
+organizational insight, data engineering, and applied AI to build systems that improve how
+organizations analyze information, make decisions, and execute their strategies.
+
+Omar Malik — Founder & CEO. Business Strategy · Decision Architecture · Data Science and AI.
+Omar combines expertise in business strategy, organizational decision-making, data science,
+and AI. He helps organizations identify high-value decisions, redesign the workflows
+surrounding them, and build data and AI systems that improve execution. His work spans
+strategic assessment, data engineering, predictive modeling, anomaly detection, and AI
+application development.
+
+Ahmad Jamal Khan — Operations & Project Coordination Lead. Financial Services · Operations ·
+Risk and Compliance. Jamal brings more than three decades of leadership experience in
+financial services, including strategy, risk management, regulatory compliance, and
+operations. At Azra Analytics, he coordinates complex client engagements and translates
+project objectives into practical implementation plans grounded in stakeholder needs and
+organizational realities.
+
+Shahbaz Khan — Data Scientist & AI Developer. Data Engineering · Machine Learning · AI
+Applications. Shahbaz develops end-to-end data and machine-learning solutions, including
+data pipelines, predictive models, analytical applications, and operational tools. His
+research on convolutional neural networks received a Best Paper Award at an IEEE-sponsored
+conference, and he has built applications that generate real-time predictions from audio
+data.
+
+===============================================================================
+U.S. BUSINESS AI ADOPTION TRACKER  (/ai-adoption-tracker.html)
+===============================================================================
+
+Explore how businesses across the United States are adopting artificial intelligence, and
+how adoption differs across states, industries, and firm sizes. The tracker transforms
+recurring federal survey data into an interactive view of where AI use is growing, where
+uncertainty remains, and which parts of the economy are moving fastest. Built and maintained
+by Azra Analytics as a public data application — free to explore, no account required.
+Interactive app: https://ai-adoption-tracker.onrender.com/
+
+===============================================================================
+CONTACT  (/contact.html)
+===============================================================================
+
+Let's discuss an important workflow. Tell us where work slows down, data remains fragmented,
+or an important decision needs better support. We'll help you identify a practical next step
+using data, machine learning, or AI. You do not need to begin with a particular technology
+or a fully defined project.
+
+Email: omar@azraanalytics.com
+Location: Based in Michigan, working with organizations internationally.
+LinkedIn: https://www.linkedin.com/company/azra-analytics

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://azraanalytics.com/schemas/projects.schema.json",
+  "generated": "2026-09-06",
+  "organization": {
+    "name": "Azra Analytics",
+    "url": "https://www.azraanalytics.com"
+  },
+  "domains_served": [
+    "public-health data infrastructure",
+    "financial operations and expense integrity",
+    "leasing and financial services",
+    "trucking, logistics, and transportation safety",
+    "banking and document processing"
+  ],
+  "projects": [
+    {
+      "id": "assessment-of-pakistans-public-health-data-infrastructure",
+      "name": "Assessment of Pakistan's Public-Health Data Infrastructure",
+      "domain": "public health",
+      "client_type": "national public-health system, with U.S. CDC backing",
+      "problem": "A countrywide public-health data system with unclear data flows, quality issues, duplication, and fragmented disease surveillance.",
+      "work": "Countrywide evaluation of public-health data systems: technical review of the National Health Data Center, capacity surveys across 124 districts, and fieldwork at 81 health facilities spanning 39 districts. Examined data flows, reporting approaches, infrastructure conditions, data quality, duplication, and disease-surveillance mechanisms.",
+      "outcome": "Strategic recommendations for system enhancement and integration.",
+      "capabilities": ["strategy-and-workflow-design", "data-ingestion-and-engineering"],
+      "methods": ["system assessment", "capacity surveys", "field data collection", "data-quality analysis"]
+    },
+    {
+      "id": "expense-anomaly-detection",
+      "name": "Expense Anomaly Detection",
+      "domain": "financial operations",
+      "client_type": "major leasing organization",
+      "problem": "Five years of expense transactions with duplicate patterns, suspicious amounts, and unusual feature combinations that manual review could not cover.",
+      "work": "Built an anomaly-detection framework combining rule-based controls with Isolation Forest, Histogram-Based Outlier Scores, and denoising autoencoder models. Included data preparation, model evaluation, multi-model anomaly comparison, explainability outputs, stakeholder reporting, and deployment planning for both batch and individual transaction review.",
+      "outcome": "Deployable framework flagging duplicate patterns, suspicious amounts, structural rarity, and unusual transaction-feature combinations, with explanations for reviewers.",
+      "capabilities": ["machine-learning"],
+      "methods": ["Isolation Forest", "Histogram-Based Outlier Score", "denoising autoencoder", "rule-based controls", "model explainability"]
+    },
+    {
+      "id": "integrated-data-and-safety-platform-for-transportation",
+      "name": "Integrated Data and Safety Platform for Transportation",
+      "domain": "trucking and logistics",
+      "client_type": "trucking and logistics company",
+      "problem": "Operational data spread across many Google Sheets, with no central warehouse and no predictive view of inspection risk.",
+      "work": "Designed a technical architecture integrating operational data into a centralized data warehouse, automated ETL pipeline, REST API, and dashboard-ready analytics layer. Used millions of federal inspection records to model weigh-station activity, predict inspection outcomes and depth, and identify likely violation categories.",
+      "outcome": "More timely, consistent, and actionable information for managers, dispatchers, and drivers.",
+      "capabilities": ["data-ingestion-and-engineering", "machine-learning"],
+      "methods": ["data warehouse design", "ETL automation", "REST API", "predictive modeling on federal inspection records"]
+    },
+    {
+      "id": "data-ingestion-pipeline-for-pdfs-and-document-images",
+      "name": "Data Ingestion Pipeline for PDFs and Document Images",
+      "domain": "banking and document processing",
+      "client_type": "financial institution",
+      "problem": "Digital and scanned bank statements had to be turned into validated transaction data and financial reports by hand, with weak auditability and sensitive-data exposure.",
+      "work": "Designed and prototyped an on-premises AI platform that converts digital and scanned bank statements into validated transaction data and automated financial reports, using document classification, OCR, large language models, deterministic parsers, arithmetic validation, confidence scoring, and human exception review.",
+      "outcome": "Reduced manual data entry, stronger auditability, protection of sensitive financial data, and a structured foundation for future risk analytics and decision support.",
+      "capabilities": ["data-ingestion-and-engineering", "ai-application-development"],
+      "methods": ["document classification", "OCR", "large language models", "deterministic parsers", "arithmetic validation", "confidence scoring", "human-in-the-loop review"]
+    }
+  ],
+  "public_tools": [
+    {
+      "id": "us-business-ai-adoption-tracker",
+      "name": "U.S. Business AI Adoption Tracker",
+      "url": "https://ai-adoption-tracker.onrender.com/",
+      "description": "A free public data application that transforms recurring federal survey data into an interactive view of how U.S. businesses are adopting AI across states, industries, and firm sizes.",
+      "access": "free, no account required"
+    }
+  ]
+}

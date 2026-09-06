@@ -235,6 +235,17 @@ img { max-width: 100%; display: block; }
 }
 .deliverables li { margin-bottom: 4px; }
 
+/* ===== FAQ list (faq page) ===== */
+.faq-item {
+  padding: 26px 0;
+  border-top: 1px solid var(--border);
+  max-width: 760px;
+}
+.faq-item:last-child { border-bottom: 1px solid var(--border); }
+.faq-item h2 { font-size: 1.16rem; margin-bottom: 10px; }
+.faq-item p { font-size: .98rem; }
+.faq-item p:last-child { margin-bottom: 0; }
+
 /* ===== Page intro (non-hero pages) ===== */
 .page-intro {
   background: linear-gradient(180deg, var(--cream) 0%, var(--green-tint) 100%);

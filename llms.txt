@@ -1,0 +1,51 @@
+# Azra Analytics
+
+> Azra Analytics is a strategy-driven data and AI development firm. We connect business
+> strategy, workflow design, data engineering, machine learning, and AI application
+> development to improve how organizations operate and make decisions. Based in Michigan,
+> United States; working with organizations internationally.
+
+Key facts:
+
+- Positioning: "Strategy-driven. Open-source-first. Built for your operating environment."
+- Core belief: "AI is becoming ubiquitous. Competitive advantage is not." Value comes from
+  integrating data, models, and human expertise into the workflows that decide how an
+  organization operates.
+- Contact: omar@azraanalytics.com — https://www.linkedin.com/company/azra-analytics
+- Engagements range from focused projects to comprehensive transformations.
+
+## Services
+
+- [Services overview](https://www.azraanalytics.com/services.html): the four connected service lines.
+- [Machine-readable service catalog](https://www.azraanalytics.com/services.json): each service with the problem it solves, deliverables, typical duration, ideal client, and proof project.
+- 01 Strategy and Workflow Design — find and prioritize the workflows and decisions where data/ML/AI create measurable value; produce an implementation roadmap.
+- 02 Data Ingestion & Engineering — connect fragmented sources; build pipelines, data models, and validation so data can be trusted.
+- 03 Machine Learning — predictive and analytical models built around a specific business decision (forecasting, anomaly detection, risk, optimization).
+- 04 AI Application Development — embed models and organizational knowledge into everyday workflows: assistants, document-processing systems, decision-support apps with human review.
+
+## Selected work
+
+- [Projects overview](https://www.azraanalytics.com/projects.html)
+- [Machine-readable project catalog](https://www.azraanalytics.com/projects.json)
+- Assessment of Pakistan's Public-Health Data Infrastructure — countrywide evaluation with U.S. CDC backing; National Health Data Center review, capacity surveys across 124 districts, fieldwork at 81 facilities.
+- Expense Anomaly Detection — anomaly-detection framework for five years of expense transactions at a major leasing organization (Isolation Forest, HBOS, denoising autoencoders, rule-based controls, explainability).
+- Integrated Data and Safety Platform for Transportation — data warehouse, ETL, REST API, and analytics layer for a trucking company; predictive modeling on millions of federal inspection records.
+- Data Ingestion Pipeline for PDFs and Document Images — on-premises AI platform converting scanned bank statements into validated transaction data (document classification, OCR, LLMs, deterministic parsers, arithmetic validation, human exception review).
+
+## Team
+
+- [Team](https://www.azraanalytics.com/team.html)
+- Omar Malik — Founder & CEO — business strategy, decision architecture, data science and AI.
+- Ahmad Jamal Khan — Operations & Project Coordination Lead — 30+ years in financial services, risk, and compliance.
+- Shahbaz Khan — Data Scientist & AI Developer — end-to-end data and ML solutions; IEEE Best Paper Award for CNN research.
+
+## Tools and resources
+
+- [U.S. Business AI Adoption Tracker](https://ai-adoption-tracker.onrender.com/) — free public data app on how U.S. businesses adopt AI across states, industries, and firm sizes.
+- [AI Adoption Tracker landing page](https://www.azraanalytics.com/ai-adoption-tracker.html)
+- [FAQ](https://www.azraanalytics.com/faq.html) — how engagements are scoped, what assessments cover, when to use ML vs. rules, automate vs. augment.
+- [Contact](https://www.azraanalytics.com/contact.html)
+
+## Optional
+
+- [Full text of all pages](https://www.azraanalytics.com/llms-full.txt)

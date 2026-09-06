@@ -1,0 +1,82 @@
+{
+  "$schema": "https://azraanalytics.com/schemas/services.schema.json",
+  "generated": "2026-09-06",
+  "organization": {
+    "name": "Azra Analytics",
+    "url": "https://www.azraanalytics.com",
+    "summary": "Strategy-driven data and AI development firm. We connect business strategy, workflow design, data engineering, machine learning, and AI application development to improve how organizations operate and decide.",
+    "positioning": "Strategy-driven. Open-source-first. Built for your operating environment.",
+    "location": "Based in Michigan, United States. Works with organizations internationally.",
+    "contact": "omar@azraanalytics.com",
+    "linkedin": "https://www.linkedin.com/company/azra-analytics"
+  },
+  "engagement_model": "Services function as one connected cycle: strategy informs decisions, data engineering builds foundations, machine learning generates insights, and AI applications embed those insights into workflows. Engagements range from focused projects to comprehensive transformations.",
+  "services": [
+    {
+      "id": "strategy-and-workflow-design",
+      "number": "01",
+      "name": "Strategy and Workflow Design",
+      "problem_solved": "Organizations know AI matters but cannot tell which workflows, decisions, or operational problems are actually worth investing in.",
+      "description": "We identify the workflows, decisions, and operational challenges where data, machine learning, and AI can create measurable value, then translate those opportunities into a practical implementation roadmap.",
+      "deliverables": [
+        "Decision and workflow maps",
+        "Prioritized opportunities",
+        "Implementation guidance and roadmap"
+      ],
+      "typical_duration": "3 to 8 weeks",
+      "ideal_client": "Leaders with fragmented data and several candidate AI ideas who need a defensible sequence and business case before committing budget.",
+      "proof": ["assessment-of-pakistans-public-health-data-infrastructure"]
+    },
+    {
+      "id": "data-ingestion-and-engineering",
+      "number": "02",
+      "name": "Data Ingestion & Engineering",
+      "problem_solved": "Data is scattered across systems, spreadsheets, and documents, is inconsistently structured, and cannot be trusted for reporting or modeling.",
+      "description": "We connect fragmented data sources and build reliable pipelines, data models, and analytical foundations. The result is trusted, accessible data that can support reporting, machine learning, and AI applications.",
+      "deliverables": [
+        "Automated ingestion and ETL pipelines",
+        "Structured data models and warehouse layer",
+        "Validation and data-quality controls"
+      ],
+      "typical_duration": "4 to 12 weeks",
+      "ideal_client": "Operations and analytics teams whose reporting breaks because source data is manual, duplicated, or spread across many systems.",
+      "proof": [
+        "integrated-data-and-safety-platform-for-transportation",
+        "data-ingestion-pipeline-for-pdfs-and-document-images"
+      ]
+    },
+    {
+      "id": "machine-learning",
+      "number": "03",
+      "name": "Machine Learning",
+      "problem_solved": "A recurring, high-value decision is being made with intuition or simple rules when historical data could support it.",
+      "description": "We develop predictive and analytical models built around specific business decisions, from forecasting and anomaly detection to risk assessment, optimization, and operational planning.",
+      "deliverables": [
+        "Predictive and anomaly-detection models",
+        "Decision-support systems",
+        "Explainability, evaluation, and monitoring"
+      ],
+      "typical_duration": "6 to 16 weeks",
+      "ideal_client": "Teams with a clearly defined decision, a source of ground-truth history, and the ability to act on a model's output.",
+      "proof": [
+        "expense-anomaly-detection",
+        "integrated-data-and-safety-platform-for-transportation"
+      ]
+    },
+    {
+      "id": "ai-application-development",
+      "number": "04",
+      "name": "AI Application Development",
+      "problem_solved": "Insights and models exist but are not embedded where work actually happens, so they do not change day-to-day behavior.",
+      "description": "We build practical AI applications that integrate models, organizational knowledge, and human judgment into everyday workflows: intelligent assistants, recommendation systems, document-processing tools, and custom decision-support applications.",
+      "deliverables": [
+        "Intelligent assistants and copilots",
+        "Document-processing and extraction systems",
+        "Custom decision-support applications with human-in-the-loop review"
+      ],
+      "typical_duration": "8 to 20 weeks",
+      "ideal_client": "Organizations that have a proven insight or manual process and want it delivered as a dependable application with auditability and human oversight.",
+      "proof": ["data-ingestion-pipeline-for-pdfs-and-document-images"]
+    }
+  ]
+}

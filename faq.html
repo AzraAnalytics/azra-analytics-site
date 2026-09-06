@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ — Azra Analytics</title>
+  <meta name="description" content="How Azra Analytics scopes data and AI projects: assessments, machine learning vs. rules, automate vs. augment, data foundations, auditability, and what an engagement looks like." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.azraanalytics.com/#org",
+        "name": "Azra Analytics",
+        "url": "https://www.azraanalytics.com/",
+        "email": "omar@azraanalytics.com",
+        "slogan": "Strategy Driven AI and Data",
+        "description": "Strategy-driven data and AI development firm connecting business strategy, workflow design, data engineering, machine learning, and AI application development.",
+        "areaServed": "Worldwide",
+        "address": { "@type": "PostalAddress", "addressRegion": "MI", "addressCountry": "US" },
+        "sameAs": ["https://www.linkedin.com/company/azra-analytics"],
+        "knowsAbout": ["Data strategy", "Workflow design", "Data engineering", "Machine learning", "Anomaly detection", "AI application development", "Document processing", "Public-health data systems", "Predictive analytics"]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.azraanalytics.com/faq.html",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do you scope a first data or AI project?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We start from a decision or workflow, not a technology. We ask which recurring decision would change if it were better informed, who owns it, what data already touches it, and what a good outcome is worth. From there we look for the smallest version of the problem that still delivers real value, confirm usable data exists, and check that someone can act on the result. The output is a short written scope: the decision, the proposed approach, the data required, the risks, and a rough sequence. A good first project is narrow, has ground-truth data to learn from and measure against, and produces something people use within a few months rather than a research report." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does a public-health data system assessment involve?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It combines a technical review of central systems with field evidence from the places where data is actually created. In our countrywide assessment of Pakistan's public-health data infrastructure, backed by the U.S. CDC, that meant reviewing the National Health Data Center, running capacity surveys across 124 districts, and visiting 81 health facilities across 39 districts. We trace how data moves from facility to district to national level, and examine reporting practices, infrastructure conditions, data quality, duplication, and disease-surveillance mechanisms. The deliverable is a prioritized set of recommendations for strengthening and integrating the system, not just a list of gaps." }
+          },
+          {
+            "@type": "Question",
+            "name": "When is machine learning better than business rules?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Rules are the right choice when the logic is known, stable, and easy to write down: thresholds, policy checks, and clear eligibility criteria. Machine learning earns its place when the pattern is real but hard to specify, involves many interacting variables, or drifts over time, and when you have enough labeled history to learn from and to measure against. In practice the strongest systems use both. Our expense anomaly-detection work for a leasing organization pairs rule-based controls with Isolation Forest, Histogram-Based Outlier Scores, and denoising autoencoders, so obvious violations are caught deterministically and subtler structural anomalies surface from the models, each with an explanation for the reviewer." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you decide whether to automate, augment, or leave a workflow alone?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We look at volume, how rule-based the task is, whether there is a clear correct answer, and how much judgment or context each case needs. High-volume, repetitive work with a checkable ground truth is a candidate for automation with human exception review, as in our bank-statement ingestion platform. Work that needs expertise but is slowed by search, drafting, or synthesis is better augmented with an assistant that keeps the person in control. Low-volume or high-stakes decisions that rely on relationships and tacit knowledge are usually best left alone, or supported only with better information. The cost of an error, and who bears it, sets how much human oversight the design needs." }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes a workflow a good candidate for anomaly detection?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Anomaly detection fits when normal behavior is common and well represented in the data, problem cases are rare and varied, and full labels are scarce, so writing an exhaustive rule set is impractical. You also need enough history to characterize normal, features that actually capture the behavior of interest, and a team that can review flagged items. Expense and payment data, transaction logs, and operational telemetry are typical fits. The goal is not to replace judgment but to route a manageable, ranked queue of unusual cases to reviewers, with enough explanation that they can act quickly." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do we need a data warehouse before doing any AI?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not always, but you do need trustworthy data for the specific decision you are targeting. For a narrow first project, a focused pipeline that pulls the few sources that matter, cleans them, and validates them is often enough. A warehouse becomes worth building when several use cases need the same integrated data, when reporting keeps breaking because sources are manual or duplicated, or when you want a durable analytics layer. For a trucking and logistics client we built a centralized warehouse, automated ETL, a REST API, and an analytics layer precisely because many downstream needs depended on the same operational data being consistent." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does 'open-source-first' mean for our stack and vendor lock-in?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It means we default to open, widely supported tools and standard interfaces, and reach for proprietary or managed services only where they clearly earn it. The aim is that you own your data, your pipelines, and your models, can run them in your own environment, and can change providers without a rebuild. Several of our systems are designed to run on-premises for exactly this reason, including a document-ingestion platform that had to keep sensitive financial data inside the client's infrastructure. Open-source-first does not mean avoiding commercial software; it means keeping the core portable and the switching cost low." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you keep AI systems auditable and safe in regulated settings like finance and health?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We design for review from the start: deterministic validation alongside models, confidence scoring on every output, explanations attached to each flag or extraction, and a defined human exception path for low-confidence or high-impact cases. We keep records of inputs, model versions, and decisions so results can be reconstructed, and we prefer architectures that keep sensitive data within your controlled environment. Our bank-statement pipeline, for example, combines document classification, OCR, and language models with deterministic parsers and arithmetic checks, so every reported figure can be traced back and verified rather than trusted blindly." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does an engagement with Azra Analytics look like, start to finish?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Most engagements move through one connected cycle. First, strategy and workflow design: identify the decisions worth improving and produce a prioritized roadmap. Then data ingestion and engineering: connect the sources that decision depends on and make them reliable. Then machine learning where a model is warranted, built and evaluated around that specific decision. Then AI application development to embed the result in the tools people already use, with human oversight. Engagements can be a focused project touching just one stage, or a broader program across all of them. Work is written down at each step so you can act on it with or without us continuing." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Azra Analytics home">
+        <img class="brand-logo" src="images/logo.png" alt="Azra Analytics" />
+        <span class="brand-tag">Strategy Driven AI and Data</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="ai-adoption-tracker.html">AI Tracker</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Page intro ===== -->
+    <section class="page-intro">
+      <div class="container">
+        <p class="eyebrow">Common questions</p>
+        <h1>How we think about data and AI work</h1>
+        <p class="lead">Straight answers to the questions we hear most from leaders deciding where data, machine learning, and AI are worth the effort — and where they are not.</p>
+      </div>
+    </section>
+
+    <!-- ===== FAQ list ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="faq-item">
+          <h2>How do you scope a first data or AI project?</h2>
+          <p>We start from a decision or workflow, not a technology. We ask which recurring decision would change if it were better informed, who owns it, what data already touches it, and what a good outcome is worth. From there we look for the smallest version of the problem that still delivers real value, confirm usable data exists, and check that someone can act on the result.</p>
+          <p>The output is a short written scope: the decision, the proposed approach, the data required, the risks, and a rough sequence. A good first project is narrow, has ground-truth data to learn from and measure against, and produces something people use within a few months rather than a research report.</p>
+        </div>
+
+        <div class="faq-item">
+          <h2>What does a public-health data system assessment involve?</h2>
+          <p>It combines a technical review of central systems with field evidence from the places where data is actually created. In our countrywide assessment of Pakistan's public-health data infrastructure, backed by the U.S. CDC, that meant reviewing the National Health Data Center, running capacity surveys across 124 districts, and visiting 81 health facilities across 39 districts.</p>
+          <p>We trace how data moves from facility to district to national level, and examine reporting practices, infrastructure conditions, data quality, duplication, and disease-surveillance mechanisms. The deliverable is a prioritized set of recommendations for strengthening and integrating the system, not just a list of gaps.</p>
+        </div>
+
+        <div class="faq-item">
+          <h2>When is machine learning better than business rules?</h2>
+          <p>Rules are the right choice when the logic is known, stable, and easy to write down: thresholds, policy checks, and clear eligibility criteria. Machine learning earns its place when the pattern is real but hard to specify, involves many interacting variables, or drifts over time, and when you have enough labeled history to learn from and to measure against.</p>
+          <p>In practice the strongest systems use both. Our expense anomaly-detection work for a leasing organization pairs rule-based controls with Isolation Forest, Histogram-Based Outlier Scores, and denoising autoencoders, so obvious violations are caught deterministically and subtler structural anomalies surface from the models, each with an explanation for the reviewer.</p>
+        </div>
+
+        <div class="faq-item">
+          <h2>How do you decide whether to automate, augment, or leave a workflow alone?</h2>
+          <p>We look at volume, how rule-based the task is, whether there is a clear correct answer, and how much judgment or context each case needs. High-volume, repetitive work with a checkable ground truth is a candidate for automation with human exception review, as in our bank-statement ingestion platform. Work that needs expertise but is slowed by search, drafting, or synthesis is better augmented with an assistant that keeps the person in control.</p>
+          <p>Low-volume or high-stakes decisions that rely on relationships and tacit knowledge are usually best left alone, or supported only with better information. The cost of an error, and who bears it, sets how much human oversight the design needs.</p>
+        </div>
+
+        <div class="faq-item">
+          <h2>What makes a workflow a good candidate for anomaly detection?</h2>
+          <p>Anomaly detection fits when normal behavior is common and well represented in the data, problem cases are rare and varied, and full labels are scarce, so writing an exhaustive rule set is impractical. You also need enough history to characterize normal, features that actually capture the behavior of interest, and a team that can review flagged items.</p>
+          <p>Expense and payment data, transaction logs, and operational telemetry are typical fits. The goal is not to replace judgment but to route a manageable, ranked queue of unusual cases to reviewers, with enough explanation that they can act quickly.</p>
+        </div>
+
+        <div class="faq-item">
+          <h2>Do we need a data warehouse before doing any AI?</h2>
+          <p>Not always, but you do need trustworthy data for the specific decision you are targeting. For a narrow first project, a focused pipeline that pulls the few sources that matter, cleans them, and validates them is often enough.</p>
+          <p>A warehouse becomes worth building when several use cases need the same integrated data, when reporting keeps breaking because sources are manual or duplicated, or when you want a durable analytics layer. For a trucking and logistics client we built a centralized warehouse, automated ETL, a REST API, and an analytics layer precisely because many downstream needs depended on the same operational data being consistent.</p>
+        </div>
+
+        <div class="faq-item">
+          <h2>What does "open-source-first" mean for our stack and vendor lock-in?</h2>
+          <p>It means we default to open, widely supported tools and standard interfaces, and reach for proprietary or managed services only where they clearly earn it. The aim is that you own your data, your pipelines, and your models, can run them in your own environment, and can change providers without a rebuild.</p>
+          <p>Several of our systems are designed to run on-premises for exactly this reason, including a document-ingestion platform that had to keep sensitive financial data inside the client's infrastructure. Open-source-first does not mean avoiding commercial software; it means keeping the core portable and the switching cost low.</p>
+        </div>
+
+        <div class="faq-item">
+          <h2>How do you keep AI systems auditable and safe in regulated settings like finance and health?</h2>
+          <p>We design for review from the start: deterministic validation alongside models, confidence scoring on every output, explanations attached to each flag or extraction, and a defined human exception path for low-confidence or high-impact cases. We keep records of inputs, model versions, and decisions so results can be reconstructed, and we prefer architectures that keep sensitive data within your controlled environment.</p>
+          <p>Our bank-statement pipeline, for example, combines document classification, OCR, and language models with deterministic parsers and arithmetic checks, so every reported figure can be traced back and verified rather than trusted blindly.</p>
+        </div>
+
+        <div class="faq-item">
+          <h2>What does an engagement with Azra Analytics look like, start to finish?</h2>
+          <p>Most engagements move through one connected cycle. First, strategy and workflow design: identify the decisions worth improving and produce a prioritized roadmap. Then data ingestion and engineering: connect the sources that decision depends on and make them reliable. Then machine learning where a model is warranted, built and evaluated around that specific decision. Then AI application development to embed the result in the tools people already use, with human oversight.</p>
+          <p>Engagements can be a focused project touching just one stage, or a broader program across all of them. Work is written down at each step so you can act on it with or without us continuing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact CTA ===== -->
+    <section class="section section-cta">
+      <div class="container contact-inner">
+        <h2 class="section-title">Still deciding where to start?</h2>
+        <p class="lead">Tell us about the workflow or decision you want to improve. We'll help you find a practical next step.</p>
+        <a class="btn btn-primary" href="contact.html">Discuss a workflow</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="images/logo-light.png" alt="Azra Analytics" />
+        <span class="brand-tag">Strategy Driven AI and Data</span>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="team.html">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="ai-adoption-tracker.html">AI Tracker</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:omar@azraanalytics.com">omar@azraanalytics.com</a>
+        <a href="https://www.linkedin.com/company/azra-analytics" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Azra Analytics. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.primary-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  </script>
+</body>
+</html>

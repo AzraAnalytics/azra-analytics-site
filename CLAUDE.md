@@ -33,9 +33,21 @@ Tagline: "Strategy Driven AI and Data" / "Turn your data into intelligent workfl
 - `ai-adoption-tracker.html` — landing page replicating the live promo page; the actual interactive
   tracker is a separate app the live site links out to (`https://ai-adoption-tracker.onrender.com/`),
   not something built into this static site.
+- `faq.html` — 8 retrieval-oriented Q&A on how engagements are scoped, ML vs. rules, automate vs.
+  augment, auditability, etc. Doubles as grounding for a future on-site assistant. Styled with
+  `.faq-item` in `styles.css`.
+- Agent-discoverability layer (Phase 0 of the "agent-native" roadmap — see
+  `~/.claude/plans/how-can-i-make-staged-parasol.md`):
+  - `llms.txt` / `llms-full.txt` — curated + full site text for LLM answer engines.
+  - `services.json` / `projects.json` — machine-readable catalog of service lines and case studies.
+    **Keep these in sync when service/project copy changes.**
+  - `robots.txt` / `sitemap.xml` — reference `https://www.azraanalytics.com` as the canonical host.
+  - Every HTML page has a JSON-LD `<script type="application/ld+json">` block in `<head>`
+    (`ProfessionalService` + page-specific type). Update it if page content changes materially.
 - Every page repeats the same header/nav/footer markup (no templating, since `fetch()`-based
   includes break when the site is opened via `file://` with no server — see Preview below).
-  If you edit the nav or footer, **update all 6 HTML files**.
+  If you edit the nav or footer, **update all 7 HTML files** (the 6 originals + `faq.html`).
+  Nav order: Home · Team · Projects · Services · AI Tracker · FAQ · Contact.
 - `styles.css` — mobile-first CSS with breakpoints at 640px (tablet) and 900px (desktop).
   Design tokens (brand colors) are CSS variables at the top of the file.
 - Fonts: Google Fonts — Space Grotesk (page headings h1/h2/h3), Inter (body). The **logo wordmark**
@@ -66,6 +78,19 @@ Tagline: "Strategy Driven AI and Data" / "Turn your data into intelligent workfl
 - [ ] Contact form has no real backend (see `contact.html` note above) — fine for now, revisit if a
       no-email-client submission flow is wanted
 - [ ] Deploy free (Netlify or Cloudflare Pages) and point azraanalytics.com domain at it
+
+## "Agent-native" roadmap
+Full plan: `~/.claude/plans/how-can-i-make-staged-parasol.md`. Turning the brochure into a site
+that's useful to people in Azra's domains and to AI agents (on-site assistant + external answer
+engines).
+- [x] Phase 0 — agent-discoverability: `llms.txt`, JSON-LD on every page, `services.json` /
+      `projects.json`, `faq.html`, `robots.txt` / `sitemap.xml`. Pure static, no backend.
+- [ ] Phase 1 — deterministic give-away tools (JS only): AI/Data Readiness Assessment (flagship),
+      use-case prioritization matrix, "is this a good AI use case?" checker.
+- [ ] Phase 2 — "Azra Advisor" assistant: needs ONE serverless function (Cloudflare Pages /
+      Netlify) as an Anthropic API-key proxy + Turnstile + rate limit; grounded on a hand-written
+      `content/knowledge.md`. This is the one open infra decision.
+- [ ] Phase 3 — MCP server (Cloudflare Worker) exposing read-only tools for external agents.
 
 ## Owner
 Omar Malik — omar@azraanalytics.com — GitHub: omarRmalik

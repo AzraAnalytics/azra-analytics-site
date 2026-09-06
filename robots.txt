@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.azraanalytics.com/sitemap.xml
+# Curated context for language models: https://www.azraanalytics.com/llms.txt
