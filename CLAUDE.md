@@ -36,8 +36,7 @@ Tagline: "Strategy Driven AI and Data" / "Turn your data into intelligent workfl
 - `faq.html` — 8 retrieval-oriented Q&A on how engagements are scoped, ML vs. rules, automate vs.
   augment, auditability, etc. Doubles as grounding for a future on-site assistant. Styled with
   `.faq-item` in `styles.css`.
-- Agent-discoverability layer (Phase 0 of the "agent-native" roadmap — see
-  `~/.claude/plans/how-can-i-make-staged-parasol.md`):
+- Agent-discoverability layer (Phase 0 of the "agent-native" roadmap — see `agent_native.md`):
   - `llms.txt` / `llms-full.txt` — curated + full site text for LLM answer engines.
   - `services.json` / `projects.json` — machine-readable catalog of service lines and case studies.
     **Keep these in sync when service/project copy changes.**
@@ -80,9 +79,8 @@ Tagline: "Strategy Driven AI and Data" / "Turn your data into intelligent workfl
 - [ ] Deploy free (Netlify or Cloudflare Pages) and point azraanalytics.com domain at it
 
 ## "Agent-native" roadmap
-Full plan: `~/.claude/plans/how-can-i-make-staged-parasol.md`. Turning the brochure into a site
-that's useful to people in Azra's domains and to AI agents (on-site assistant + external answer
-engines).
+Full plan: `agent_native.md` (in this repo). Turning the brochure into a site that's useful to
+people in Azra's domains and to AI agents (on-site assistant + external answer engines).
 - [x] Phase 0 — agent-discoverability: `llms.txt`, JSON-LD on every page, `services.json` /
       `projects.json`, `faq.html`, `robots.txt` / `sitemap.xml`. Pure static, no backend.
 - [ ] Phase 1 — deterministic give-away tools (JS only): AI/Data Readiness Assessment (flagship),
