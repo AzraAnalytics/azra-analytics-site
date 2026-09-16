@@ -81,6 +81,28 @@ Tagline: "Strategy Driven AI and Data" / "Turn your data into intelligent workfl
   image and it became unreadably small at header size, so don't repeat that. Original brand files
   (icon variants, .eps, old "Full Stack Data Science" tagline) kept in `brand-source/` for reference.
   Team photos live in `images/team/`.
+- **Logo canvas geometry (measured, don't "tidy" it away).** `logo.png` is 2887x803 and its
+  canvas does *not* hug the artwork, which is the root of three separate CSS compensations:
+  the icon occupies x 25-441 / y 25-798 (774px tall), while the "Azra Analytics" wordmark is
+  x 653-2862 / y 216-540 (only 325px tall). So: (a) there is ~1px of transparent margin on
+  the left, which is why `.brand` gets `padding-left: 6px` on phones — without it the icon
+  sits on the screen edge; (b) the wordmark starts 653/803 = **0.813** of the way across
+  relative to the logo's height, the `--wordmark-x` token that indents `.brand-tag` so the
+  tagline sits under the wordmark and not under the icon; (c) 262/803 = **0.326** of the
+  height is empty canvas *below* the wordmark, the `--wordmark-bottom` token that pulls the
+  tagline back up through it. Logo height is driven by a `--logo-h` variable on `.brand` /
+  `.footer-brand` so the tagline offsets track it at every breakpoint — set the height there,
+  never on `.brand-logo` / `.footer-logo` directly. The real visual gap is the flex `gap`
+  (4px header, 6px footer). **If the logo is ever regenerated trimmed tight to its ink, all
+  three of these can be deleted** — remeasure before changing any of the numbers.
+- Team photo crops: `.avatar-photo` is an 88px circle using `object-fit: cover`, so portrait
+  sources get a centered square crop. `omar-malik.jpg` is 2000x2660 framed with the top of his
+  head only 94px down, and the default center crop sliced 236px off it — hence
+  `.avatar-photo[src$="omar-malik.jpg"] { object-position: 50% 8%; }`. That rule is keyed to
+  the filename, so re-check it if the photo is replaced. The source has only 3.5% headroom, so
+  the crop is necessarily tight; a proper square recrop (~1300px around the face) would frame
+  it better and cut the file from 1MB to ~40KB for an 88px avatar. Ahmad's photo is square
+  (no crop); Shahbaz's is portrait but his head clears the default crop.
 - Preview: just open `index.html` in a browser (double-click). No server needed — this is also why
   the header/footer are duplicated per page instead of loaded via JS `fetch()`.
 

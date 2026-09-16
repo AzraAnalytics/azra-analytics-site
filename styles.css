@@ -12,6 +12,14 @@
   --radius:       14px;
   --shadow:       0 6px 24px rgba(56, 66, 74, 0.08);
   --maxw:         1120px;
+  /* In logo.png the icon ends at x=441 and the "Azra Analytics" wordmark starts at
+     x=653, on an 803px-tall canvas: 653/803. Used to indent the tagline so it lines
+     up under the wordmark rather than under the icon. Remeasure if the logo changes. */
+  --wordmark-x:   0.813;
+  /* The icon is 774px tall but the wordmark only 325px, so 262px of the 803px canvas
+     below "Azra Analytics" is empty. Pull the tagline back up through it, otherwise
+     the lockup carries ~20px of invisible padding at desktop size. */
+  --wordmark-bottom: 0.326;
 }
 
 /* ===== Base ===== */
@@ -73,9 +81,24 @@ img { max-width: 100%; display: block; }
   min-height: 68px;
   padding: 10px 0;
 }
-.brand { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
-.brand-logo { height: 44px; width: auto; display: block; }
+/* The logo artwork has no transparent margin baked in, so at the container's 20px
+   padding the icon sits almost on the screen edge. Nudge it in on phones only —
+   from 640px up the brand realigns with the container edge like everything else. */
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding-left: 6px;
+  --logo-h: 44px;
+}
+.brand-logo { height: var(--logo-h); width: auto; display: block; }
 .brand-tag {
+  /* Sits under the wordmark, not under the icon, and tight to its baseline —
+     the flex gap on .brand / .footer-brand then sets the real visual spacing. */
+  margin-left: calc(var(--logo-h) * var(--wordmark-x));
+  margin-top: calc(-1 * var(--logo-h) * var(--wordmark-bottom));
+  line-height: 1.2;
   font-family: "Inter", sans-serif;
   font-size: .62rem;
   font-weight: 600;
@@ -191,8 +214,13 @@ img { max-width: 100%; display: block; }
   margin: 0 auto 14px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: 50% 50%;
   background: var(--green-tint);
 }
+/* omar-malik.jpg is 2000x2660 with the top of the head only 94px down, so the default
+   centred square crop cut 236px off it. Bias the crop window to the top instead.
+   Keyed to the filename — if the photo is replaced, re-check or drop this rule. */
+.avatar-photo[src$="omar-malik.jpg"] { object-position: 50% 8%; }
 .team-card h3 { font-size: 1.15rem; margin-bottom: 2px; }
 .role { color: var(--green); font-weight: 600; font-size: .9rem; margin-bottom: 10px; }
 .expertise {
@@ -527,8 +555,14 @@ img { max-width: 100%; display: block; }
   grid-template-columns: 1fr;
   gap: 24px;
 }
-.footer-logo { height: 36px; width: auto; display: block; }
-.footer-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.footer-logo { height: var(--logo-h); width: auto; display: block; }
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  --logo-h: 36px;
+}
 .footer-brand .brand-tag { color: #b9c2c9; }
 .footer-links { display: flex; flex-direction: column; gap: 10px; }
 .footer-links a, .footer-contact a { color: #cfd6db; }
@@ -550,8 +584,8 @@ img { max-width: 100%; display: block; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1.5fr 1fr 1fr; }
   .footer-links { flex-direction: column; }
-  .brand-logo { height: 54px; }
-  .footer-logo { height: 42px; }
+  .brand { padding-left: 0; --logo-h: 54px; }
+  .footer-brand { --logo-h: 42px; }
   .brand-tag { font-size: .68rem; }
   .form-row { grid-template-columns: 1fr 1fr; }
   .assess-score-head {
@@ -584,8 +618,8 @@ img { max-width: 100%; display: block; }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
   .grid-4 { grid-template-columns: repeat(4, 1fr); }
   .section { padding: 84px 0; }
-  .brand-logo { height: 62px; }
-  .footer-logo { height: 46px; }
+  .brand { --logo-h: 62px; }
+  .footer-brand { --logo-h: 46px; }
   .brand-tag { font-size: .72rem; }
   .contact-layout { grid-template-columns: 1.3fr .9fr; }
 }
