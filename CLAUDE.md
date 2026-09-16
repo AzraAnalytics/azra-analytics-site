@@ -93,16 +93,25 @@ Tagline: "Strategy Driven AI and Data" / "Turn your data into intelligent workfl
   tagline back up through it. Logo height is driven by a `--logo-h` variable on `.brand` /
   `.footer-brand` so the tagline offsets track it at every breakpoint — set the height there,
   never on `.brand-logo` / `.footer-logo` directly. The real visual gap is the flex `gap`
-  (4px header, 6px footer). **If the logo is ever regenerated trimmed tight to its ink, all
-  three of these can be deleted** — remeasure before changing any of the numbers.
-- Team photo crops: `.avatar-photo` is an 88px circle using `object-fit: cover`, so portrait
-  sources get a centered square crop. `omar-malik.jpg` is 2000x2660 framed with the top of his
-  head only 94px down, and the default center crop sliced 236px off it — hence
-  `.avatar-photo[src$="omar-malik.jpg"] { object-position: 50% 8%; }`. That rule is keyed to
-  the filename, so re-check it if the photo is replaced. The source has only 3.5% headroom, so
-  the crop is necessarily tight; a proper square recrop (~1300px around the face) would frame
-  it better and cut the file from 1MB to ~40KB for an 88px avatar. Ahmad's photo is square
-  (no crop); Shahbaz's is portrait but his head clears the default crop.
+  (4px header, 6px footer). Remeasure before changing any of these numbers.
+  **Trimming the canvas would NOT remove (b) or (c)** — this was checked: trimming tight to
+  the ink gives 2838x774, moving `--wordmark-x` only 0.813 -> 0.811 and `--wordmark-bottom`
+  only 0.326 -> 0.333. The empty space is not canvas padding, it is that a 774px-tall icon
+  and a 325px-tall wordmark share one image, and trimming the outside cannot change their
+  relationship. The only real fix is splitting the artwork into separate icon and wordmark
+  images and composing the lockup in HTML (icon, then a column holding wordmark + tagline),
+  which would touch the header and footer markup in all 8 pages. Considered and **declined
+  2026-09-16** — the current CSS renders correctly and the refactor is pure internal tidiness
+  with visual-regression risk. Don't redo this analysis from scratch.
+- Team photo crops: `.avatar-photo` is an 88px circle using `object-fit: cover`, so a portrait
+  source gets a centered square crop and can lose the top of the head. Prefer **square sources**
+  so no cropping happens at all. `omar-malik.jpg` was a 2000x2660 / 1MB portrait whose head
+  started only 100px down, so the centered crop sliced 236px off it; it is now a pre-cropped
+  512x512 / 38KB square (face-centered, crop box (244,0)-(1677,1433) of the original, head 60%
+  of frame with 7% headroom — the original's own framing allowed no more). The full-resolution
+  original is in git history: `git show 0a746db:images/team/omar-malik.jpg > omar-original.jpg`.
+  Ahmad's is square (1080x1080). Shahbaz's is still a 333x437 portrait — his head clears the
+  default center crop, but it is 121KB for an 88px avatar and could get the same treatment.
 - Preview: just open `index.html` in a browser (double-click). No server needed — this is also why
   the header/footer are duplicated per page instead of loaded via JS `fetch()`.
 

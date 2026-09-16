@@ -217,10 +217,6 @@ img { max-width: 100%; display: block; }
   object-position: 50% 50%;
   background: var(--green-tint);
 }
-/* omar-malik.jpg is 2000x2660 with the top of the head only 94px down, so the default
-   centred square crop cut 236px off it. Bias the crop window to the top instead.
-   Keyed to the filename — if the photo is replaced, re-check or drop this rule. */
-.avatar-photo[src$="omar-malik.jpg"] { object-position: 50% 8%; }
 .team-card h3 { font-size: 1.15rem; margin-bottom: 2px; }
 .role { color: var(--green); font-weight: 600; font-size: .9rem; margin-bottom: 10px; }
 .expertise {
