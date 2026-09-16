@@ -1,5 +1,43 @@
 # Deploying azraanalytics.com — moving from Wix to Netlify
 
+> ## ✅ DONE — this migration is complete (verified 2026-09-16)
+>
+> `azraanalytics.com` is live on Netlify and Wix is out of the picture. The steps below are
+> kept as a record of how it was done and as a rebuild guide if the site ever has to be set
+> up again. **You do not need to follow them.**
+>
+> ### How the live site is wired (measured, not assumed)
+>
+> | Thing | Where it actually is |
+> | --- | --- |
+> | Domain registrar | Squarespace |
+> | DNS nameservers | `nsb1`–`nsb4.squarespacedns.com` (Squarespace) |
+> | Website | Netlify, site name **`remarkable-eclair-3f9c15`** |
+> | `azraanalytics.com` (apex) | `A` → `75.2.60.5` (Netlify) |
+> | `www.azraanalytics.com` | `CNAME` → `remarkable-eclair-3f9c15.netlify.app` |
+> | Email | Google Workspace — 5 `aspmx.l.google.com` MX records, intact |
+> | HTTPS | Working on both the apex and `www` |
+>
+> ### How to update the live site
+>
+> **You don't — pushing to GitHub is the deploy.** Netlify watches the `main` branch of
+> `github.com/AzraAnalytics/azra-analytics-site` and rebuilds automatically on every push.
+> There is no build step (plain HTML), so a deploy takes well under a minute.
+>
+> ```
+> edit files  ->  git add -A  ->  git commit -m "..."  ->  git push  ->  live in ~1 min
+> ```
+>
+> To watch one: Netlify dashboard → your site → **Deploys**. The newest entry says
+> "Published" when it is done, and shows the error if it ever fails.
+>
+> **If you pushed but the site looks unchanged, it is almost always your browser cache, not
+> Netlify.** Hard-refresh with `Ctrl+Shift+R` before investigating anything else. Confirm
+> what is really deployed by opening the Deploys tab, not by trusting what the page looks
+> like.
+
+---
+
 This guide is written for a non-technical person doing this for the first time. Every step
 says **what you're doing and why**, then **exactly what to click**. Take it slowly; there is
 no rush and nothing here is hard to undo.
@@ -8,7 +46,11 @@ no rush and nothing here is hard to undo.
 
 ## The situation (read this first)
 
-We checked how `azraanalytics.com` is set up today. Three separate things are involved, and
+> **Historical.** This described the setup *before* the migration. It is left here so the
+> reasoning behind each step still makes sense. For the current state, see the table at
+> the top of this file.
+
+We checked how `azraanalytics.com` was set up before the move. Three separate things are involved, and
 they live in three different places:
 
 | Thing | Where it lives right now | What we're doing with it |

@@ -1,15 +1,21 @@
 # Azra Analytics — Website Project
 
 ## What this is
-A rebuild of the Azra Analytics website (currently live on **Wix** at www.azraanalytics.com)
-as a **plain HTML + CSS static site** — no build tools, no Node required. The goal is a clean,
-professional, **mobile-first** site the owner fully controls in code, to eventually replace the Wix site.
+The Azra Analytics website: a **plain HTML + CSS static site** — no build tools, no Node
+required — that the owner fully controls in code. Clean, professional, **mobile-first**.
+
+**This is the live site.** It is deployed on **Netlify** (site `remarkable-eclair-3f9c15`) and
+serves `azraanalytics.com` and `www.azraanalytics.com` over HTTPS. It replaced the old Wix
+site; Wix is no longer involved. **Netlify auto-deploys every push to `main`** on
+`github.com/AzraAnalytics/azra-analytics-site` — there is no build step and no manual deploy
+action, so pushing *is* publishing. Treat `main` as production. See `deploy.md` for the full
+live wiring (DNS at Squarespace, Google Workspace email) and how to check a deploy.
 
 Company: Azra Analytics — a strategy-driven data & AI consulting firm.
 Tagline: "Strategy Driven AI and Data" / "Turn your data into intelligent workflows and better decisions."
 
-## Why we rebuilt (context)
-- Original site is on Wix (classic Wix Editor). Wix does **not** allow exporting site code.
+## Why we rebuilt (history — the Wix site is gone, this replaced it)
+- The original site was on Wix (classic Wix Editor). Wix does **not** allow exporting site code.
 - Owner wanted Claude to directly edit styling and make it mobile-friendly, which isn't possible
   inside Wix. So we started a fresh code-based site from the existing content instead.
 - Owner is non-technical; keep things simple. No Node/npm on the original machine (Git + Python are installed).
@@ -113,7 +119,8 @@ Tagline: "Strategy Driven AI and Data" / "Turn your data into intelligent workfl
   Ahmad's is square (1080x1080). Shahbaz's is still a 333x437 portrait — his head clears the
   default center crop, but it is 121KB for an 88px avatar and could get the same treatment.
 - Preview: just open `index.html` in a browser (double-click). No server needed — this is also why
-  the header/footer are duplicated per page instead of loaded via JS `fetch()`.
+  the header/footer are duplicated per page instead of loaded via JS `fetch()`. That is the local
+  check; the real one is the live site a minute after pushing, since `main` deploys automatically.
 
 ## Status / still TODO
 - [ ] Omar Malik's bio text on `team.html` (title is set to "Founder & CEO" per the live site; a
@@ -125,7 +132,9 @@ Tagline: "Strategy Driven AI and Data" / "Turn your data into intelligent workfl
 - [x] Multi-page replication of the full live site, including the AI Adoption Tracker landing page
 - [ ] Contact form has no real backend (see `contact.html` note above) — fine for now, revisit if a
       no-email-client submission flow is wanted
-- [ ] Deploy free (Netlify or Cloudflare Pages) and point azraanalytics.com domain at it
+- [x] Deploy on Netlify and point the domain at it — **done**; live and verified 2026-09-16.
+      Registrar Squarespace, DNS at Squarespace, apex `A` -> `75.2.60.5`, `www` `CNAME` ->
+      `remarkable-eclair-3f9c15.netlify.app`, Google Workspace MX intact, HTTPS on both.
 
 ## "Agent-native" roadmap
 Full plan: `agent_native.md` (in this repo). Turning the brochure into a site that's useful to
